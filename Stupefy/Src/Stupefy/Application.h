@@ -1,8 +1,10 @@
 #pragma once
 
+#include "Core.h"
+
 namespace Stupefy {
 
-	class Application
+	class STUPEFY_API Application
 	{
 	public:
 		Application();
