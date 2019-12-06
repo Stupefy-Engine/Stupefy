@@ -1,5 +1,7 @@
-.vs/
+#Binaries
 bin/
 bin-int/
 
+#Visual Studio Files And Folders
+.vs/
 *.user

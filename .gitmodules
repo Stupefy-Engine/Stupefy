@@ -1,0 +1,3 @@
+[submodule "Stupefy/vendor/spdlog"]
+	path = Stupefy/vendor/spdlog
+	url = https://github.com/gabime/spdlog
