@@ -82,6 +82,7 @@
     <ClInclude Include="Src\Stupefy.h" />
     <ClInclude Include="Src\Stupefy\Application.h" />
     <ClInclude Include="Src\Stupefy\Core.h" />
+    <ClInclude Include="Src\Stupefy\EntryPoint.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Stupefy\Application.cpp" />

@@ -12,5 +12,7 @@ namespace Stupefy {
 
 		void Run();
 	};
+
+	Application* CreateApplication();
 }
 

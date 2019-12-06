@@ -14,7 +14,7 @@ public:
 	}
 };
 
-int main()
+Stupefy::Application* Stupefy::CreateApplication()
 {
-
+	return new Sandbox();
 }
