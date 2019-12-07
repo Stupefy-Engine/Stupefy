@@ -1,5 +1,5 @@
 # Stupefy
-Stupefy is an early-tage engine developed for Windows only!
+Stupefy is an early-stage engine developed for Windows only!
 
 ## Getting Started
 Visual Studio 2017 or 2019 is recommended, Stupefy is officially untested on other development environments whilst we focus on a Windows build.
