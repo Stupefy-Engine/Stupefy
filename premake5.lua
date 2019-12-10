@@ -20,13 +20,13 @@ project "Stupefy"
 
 	files
 	{
-		"%{prj.name}/src/**.h"
+		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp"
 	}
 
 	includedirs
 	{
-		"Stupefy/vendor/spdlog/include;"
+		"%{prj.name}/vendor/spdlog/include;"
 	}
 
 	filter "system:windows"
@@ -65,13 +65,13 @@ project "Sandbox"
 
 	files
 	{
-		"%{prj.name}/src/**.h"
+		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp"
 	}
 
 	includedirs
 	{
-		"%{prj.name}/vendor/spdlog/include;"
+		"Stupefy/vendor/spdlog/include;",
 		"Stupefy/src"
 	}
 
