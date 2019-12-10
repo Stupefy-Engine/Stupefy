@@ -26,7 +26,7 @@ project "Stupefy"
 
 	includedirs
 	{
-		"Stupefy\vendor\spdlog\include;"
+		"Stupefy/vendor/spdlog/include;"
 	}
 
 	filter "system:windows"
@@ -71,8 +71,8 @@ project "Sandbox"
 
 	includedirs
 	{
-		"%{prj.name}\vendor\spdlog\include;"
-		"Stupefy\src"
+		"%{prj.name}/vendor/spdlog/include;"
+		"Stupefy/src"
 	}
 
 	links
