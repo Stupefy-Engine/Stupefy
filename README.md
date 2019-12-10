@@ -1,4 +1,7 @@
 # Stupefy
+
+![Stupefy](/Resources/Branding/Stupefy-logo.png?raw=true "Stupefy")
+
 Stupefy is an early-stage engine developed for Windows only!
 
 ## Getting Started
