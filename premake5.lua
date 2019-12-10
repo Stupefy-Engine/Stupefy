@@ -46,13 +46,13 @@ project "Stupefy"
 		}
 
 	filter "configurations: Debug"
-		defines "HZ_DEBUG"
+		defines "SF_DEBUG"
 		symbols "On"
 	filter "configurations: Release"
-		defines "HZ_RELEASE"
+		defines "SF_RELEASE"
 		optimize "On"
 	filter "configurations: Dist"
-		defines "HZ_DIST"
+		defines "SF_DIST"
 		optimize "On"
 
 project "Sandbox"
@@ -81,7 +81,7 @@ project "Sandbox"
 	}
 
 	filter "system:windows"
-		cppdialect	"C++17"
+		cppdialect    "C++17"
 		staticruntime "On"
 		systemversion "latest"
 
@@ -91,11 +91,11 @@ project "Sandbox"
 		}
 
 	filter "configurations: Debug"
-		defines "HZ_DEBUG"
+		defines "SF_DEBUG"
 		symbols "On"
 	filter "configurations: Release"
-		defines "HZ_RELEASE"
+		defines "SF_RELEASE"
 		optimize "On"
 	filter "configurations: Dist"
-		defines "HZ_DIST"
+		defines "SF_DIST"
 		optimize "On"
