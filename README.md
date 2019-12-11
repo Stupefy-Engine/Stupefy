@@ -1,8 +1,8 @@
 # Stupefy
 
-![Stupefy](/res/branding/Stupefy.png?raw=true "Stupefy")
+![Stupefy](/Resources/Branding/Stupefy_Logo.png?raw=true "Stupefy")
 
-Stupefy is an early-stage engine developed for Windows only!
+Stupefy is an early-stage engine currently developed for Windows only!
 
 ## Getting Started
 Visual Studio 2017 or 2019 is recommended, Stupefy is officially untested on other development environments whilst we focus on a Windows build.
@@ -17,4 +17,5 @@ Make sure that you do a `--recursive` clone to fetch all of the submodules!
 ### Main features to come
 
 -Support for MAC, Linux 
+-Support for Model Loading
 -Fast 2D rendering (UI, Particles)
