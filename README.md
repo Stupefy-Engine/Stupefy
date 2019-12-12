@@ -16,6 +16,6 @@ Make sure that you do a `--recursive` clone to fetch all of the submodules!
 
 ### Main features to come
 
--Support for MAC, Linux 
--Support for Model Loading
--Fast 2D rendering (UI, Particles)
+- Support for MAC, Linux
+- Support for Model Loading
+- Fast 2D rendering (UI, Particles)
