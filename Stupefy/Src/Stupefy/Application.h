@@ -38,4 +38,3 @@ namespace Stupefy {
 
 	Application* CreateApplication();
 }
-
