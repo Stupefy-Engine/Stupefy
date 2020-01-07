@@ -23,7 +23,7 @@
 
 #pragma once
 
-#include <memory>
+#include "sfpch.h"
 #include "Core.h"
 #include "spdlog/spdlog.h"
 

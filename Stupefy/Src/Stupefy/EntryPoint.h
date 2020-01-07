@@ -23,6 +23,8 @@
 
 #pragma once
 
+#include "sfpch.h"
+
 #ifdef SF_PLATFORM_WINDOWS
 
 extern Stupefy::Application* Stupefy::CreateApplication();

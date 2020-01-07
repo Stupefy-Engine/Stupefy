@@ -23,6 +23,7 @@
 
 #pragma once
 
+#include "sfpch.h"
 #include "Core.h"
 
 namespace Stupefy {

@@ -20,8 +20,7 @@
 /*  limitations under the License.                                          */
 /****************************************************************************/
 
-
-#include "Log.h"
+#include "sfpch.h"
 #include "spdlog/sinks/stdout_color_sinks.h"
 
 namespace Stupefy {

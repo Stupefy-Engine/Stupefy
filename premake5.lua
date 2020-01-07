@@ -18,6 +18,9 @@ project "Stupefy"
 	targetdir("bin/" .. outputdir .. "/%{prj.name}")
 	objdir("bin-int/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "sfpch.h"
+	pchsource "Stupefy/src/sfpch.cpp"
+
 	files
 	{
 		"%{prj.name}/src/**.h",

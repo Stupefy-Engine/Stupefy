@@ -21,6 +21,7 @@
 /****************************************************************************/
 
 
+#include "sfpch.h"
 #include "Application.h"
 
 namespace Stupefy {
