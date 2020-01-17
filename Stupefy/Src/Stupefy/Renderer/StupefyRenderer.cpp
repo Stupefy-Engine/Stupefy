@@ -1,5 +1,5 @@
 /****************************************************************************/
-/*  sfpch.cpp                                                               */
+/*  StupefyRenderer.cpp                                                     */
 /****************************************************************************/
 /*                          This file is a part of:                         */
 /*                              STUPEFY ENGINE                              */
@@ -22,3 +22,4 @@
 
 
 #include "sfpch.h"
+#include "StupefyRenderer.h"
