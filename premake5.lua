@@ -19,12 +19,12 @@ project "Stupefy"
 	objdir("bin-int/" .. outputdir .. "/%{prj.name}")
 
 	pchheader "sfpch.h"
-	pchsource "Stupefy/src/sfpch.cpp"
+	pchsource "Stupefy/Src/sfpch.cpp"
 
 	files
 	{
-		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/Src/**.h",
+		"%{prj.name}/Src/**.cpp"
 	}
 
 	includedirs
@@ -68,14 +68,14 @@ project "Sandbox"
 
 	files
 	{
-		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/Src/**.h",
+		"%{prj.name}/Src/**.cpp"
 	}
 
 	includedirs
 	{
 		"Stupefy/vendor/spdlog/include;",
-		"Stupefy/src"
+		"Stupefy/Src"
 	}
 
 	links

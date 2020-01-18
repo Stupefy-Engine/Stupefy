@@ -23,8 +23,6 @@
 
 #pragma once
 
-#include "sfpch.h"
-
 namespace Stupefy
 {
 	class STUPEFY_API StupefyRenderer
