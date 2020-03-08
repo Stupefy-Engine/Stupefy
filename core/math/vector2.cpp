@@ -1,11 +1,11 @@
 /****************************************************************************/
-/*  Stupefy.h                                                               */
+/*  vector2.cpp                                                             */
 /****************************************************************************/
 /*                          This file is a part of:                         */
 /*                              STUPEFY ENGINE                              */
 /*                                                                          */
 /****************************************************************************/
-/*  Copyright[2019] Harshit Bargujar , Sujay Kumar Suman                    */
+/*  Copyright[2019] Harshit Bargujar                                        */
 /*                                                                          */
 /*  Licensed under the Apache License, Version 2.0 (the "License");         */
 /*  you may not use this file except in compliance with the License.        */
@@ -19,15 +19,3 @@
 /*  See the License for the specific language governing permissionsand      */
 /*  limitations under the License.                                          */
 /****************************************************************************/
-
-
-#pragma once
-
-//For user applications only
-
-#include "Stupefy/Application.h"
-#include "Stupefy/Log.h"
-
-//------Entry Point------------------------------
-#include "Stupefy/EntryPoint.h"
-//-----------------------------------------------

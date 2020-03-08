@@ -1,11 +1,11 @@
 /****************************************************************************/
-/*  EntryPoint.h                                                            */
+/*  vector3.h                                                               */
 /****************************************************************************/
 /*                          This file is a part of:                         */
 /*                              STUPEFY ENGINE                              */
 /*                                                                          */
 /****************************************************************************/
-/*  Copyright[2019] Harshit Bargujar , Sujay Kumar Suman                    */
+/*  Copyright[2019] Harshit Bargujar                                        */
 /*                                                                          */
 /*  Licensed under the Apache License, Version 2.0 (the "License");         */
 /*  you may not use this file except in compliance with the License.        */
@@ -22,22 +22,3 @@
 
 
 #pragma once
-
-#include "sfpch.h"
-
-#ifdef SF_PLATFORM_WINDOWS
-
-extern Stupefy::Application* Stupefy::CreateApplication();
-
-int main(int argc, char** argv)
-{
-	Stupefy::Log::Init();
-	SF_CORE_INFO("Initialized");
-	SF_CLIENT_INFO("Hello! Welcome to Stupefy...");
-
-	auto app = Stupefy::CreateApplication();
-	app->Run();
-	delete app;
-}
-
-#endif

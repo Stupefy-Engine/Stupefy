@@ -1,11 +1,11 @@
 /****************************************************************************/
-/*  StupefyRenderer.cpp                                                     */
+/*  error_macros.cpp                                                        */
 /****************************************************************************/
 /*                          This file is a part of:                         */
 /*                              STUPEFY ENGINE                              */
 /*                                                                          */
 /****************************************************************************/
-/*  Copyright[2019] Harshit Bargujar , Sujay Kumar Suman                    */
+/*  Copyright[2019] Harshit Bargujar                                        */
 /*                                                                          */
 /*  Licensed under the Apache License, Version 2.0 (the "License");         */
 /*  you may not use this file except in compliance with the License.        */
@@ -21,5 +21,4 @@
 /****************************************************************************/
 
 
-#include "sfpch.h"
-#include "StupefyRenderer.h"
+#include "error_macros.h"
