@@ -13,4 +13,12 @@ wheel. Games can be exported in one click to a number of platforms, including
 the major desktop platforms (Linux, Mac OSX, Windows) as well as mobile
 (Android, iOS) and web-based (HTML5) platforms.
 
-### Getting the engine
+### Documentation and demos
+
+The official documentation is hosted on [ReadTheDocs](https://stupefy-docs.readthedocs.io/en/latest/#).
+It is maintained by the Stupefy community in its own [GitHub repository](https://github.com/Stupefy-Engine/Stupefy-docs).
+
+
+[![Travis Build Status](https://travis-ci.org/Stupefy-Engine/Stupefy.svg?branch=master)](https://travis-ci.org/Stupefy-Engine/Stupefy)
+
+
