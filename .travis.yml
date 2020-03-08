@@ -7,23 +7,22 @@ matrix:
   # linux configurationm  
 
     - os: linux
-    compiler: gcc
-    addons:
-      apt:
-        sources:
-          - ubuntu-toolchain-r-test
-        packages:
-          - g++-6
-    env:
-       - MATRIX_EVAL="CC=gcc-6 && CXX=g++-6"
+      compiler: gcc
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - g++-6
+      env:
+         - MATRIX_EVAL="CC=gcc-6 && CXX=g++-6"
 
   # Mac OS configuration
 
-    -os: osx
-    osx_image: xcode8
-    compiler: gcc
-    env:
-      - MATRIX_EVAL="brew install gcc && CC=gcc-7 && CXX=g++-7"
+    - os: osx
+      osx_image: xcode8
+      env:
+        - MATRIX_EVAL="brew install gcc && CC=gcc-7 && CXX=g++-7"
 
   # Windows OS configuration
 
