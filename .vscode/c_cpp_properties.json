@@ -1,0 +1,50 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/*",
+                "${workspaceFolder}/core/**",
+                "${workspaceFolder}/drivers/**",
+                "${workspaceFolder}/editor/**",
+                "${workspaceFolder}/main/**",
+                "${workspaceFolder}/misc/**",
+                "${workspaceFolder)/physics/**",
+                "${workspaceFolder}/platform/windows/**",
+                "${workspaceFolder}/scene/**",
+                "${workspaceFolder}/thirdparty/include/**",
+                "${workspaceFolder}/visual/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "windowsSdkVersion": "10.0.18362.0",
+            "compilerPath": "D:/Softwares/Visual Studio 2019/VC/Tools/MSVC/14.24.28314/bin/Hostx64/x64/cl.exe",
+            "intelliSenseMode": "msvc-x64",
+            "cppStandard": "c++20",
+            "cStandard": "c11"
+        },
+
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}",
+                "/usr/include",
+                "/usr/local/include"
+            ],
+            "defines": [],
+            "intelliSenseMode": "clang-x64",
+            "browse": {
+                "path": [
+                    "/usr/include",
+                    "/usr/local/include"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            }
+        }
+    ],
+    "version": 4
+}

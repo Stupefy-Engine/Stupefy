@@ -1,0 +1,57 @@
+{
+    "version": "2.0.0",
+    "command": "g++",
+    "type": "shell",
+    "reveal": "always",  
+    "tasks": [
+        {
+            "label": "Build",
+            "group": "build",
+            "windows": {
+                "suppressTaskName": true,
+                "args": [
+                    "-g",
+                    "--std=c++17",
+                    "-I", "${workspaceFolder}",
+                    "-I", "${workspaceFolder}/thirdparty/include",
+                    /*===LIBS===*/
+                    "-lopengl32",
+                    "-lglfw3",
+                    "-lglad",
+                    "-lgdi32",
+                    "-lkernel32",
+                    "-lshell32",
+                    "${workspaceFolder}/thirdparty/src/glad.c",
+                    "-L", "${workspaceFolder}/thirdparty/bin",
+                    "-L", "${workspaceFolder}/thirdparty/lib",
+                    /*===END OF LIBS===*/
+                    "main/main.cpp",
+                    "-o", 
+                    "builds/windows/Stupefy",
+                ]
+            },
+
+            "linux": {
+                "suppressTaskName": true,
+                "args": [
+                    "-g",
+                    "--std=c++17",
+                    "main/main.cpp",
+                    "-o", 
+                    "builds/x11/Stupefy"
+                ]
+            },
+
+            "osx": {
+                "suppressTaskName": true,
+                "args": [
+                    "-g",
+                    "--std=c++17",
+                    "main/main.cpp",
+                    "-o", 
+                    "builds/osx/Stupefy"
+                ]
+            }
+        }
+    ],    
+}

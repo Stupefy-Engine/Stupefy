@@ -1,5 +1,5 @@
 /****************************************************************************/
-/*  error_macros.h                                                          */
+/*  core_common.h                                                           */
 /****************************************************************************/
 /*                          This file is a part of:                         */
 /*                              STUPEFY ENGINE                              */
@@ -22,3 +22,13 @@
 
 
 #pragma once
+
+/*SYSTEM LIBS*/
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <fstream>
+#include <memory>
+#include <vector>
+#include <algorithm>
+#include <ctime>
