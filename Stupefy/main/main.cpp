@@ -5,7 +5,7 @@
 /*                              STUPEFY ENGINE                              */
 /*                                                                          */
 /****************************************************************************/
-/*  Copyright[2019] Harshit Bargujar                                        */
+/*  Copyright[2020] Harshit Bargujar                                        */
 /*                                                                          */
 /*  Licensed under the Apache License, Version 2.0 (the "License");         */
 /*  you may not use this file except in compliance with the License.        */
@@ -16,17 +16,21 @@
 /*  Unless required by applicable law or agreed to in writing, software     */
 /*  distributed under the License is distributed on an "AS IS" BASIS,       */
 /*  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.*/
-/*  See the License for the specific language governing permissionsand      */
+/*  See the License for the specific language governing permissions and     */
 /*  limitations under the License.                                          */
 /****************************************************************************/
 
 
 #include "main.h"
+#include "core/math/vector3.h"
+#include "core/math/vector2.h"
 
+/*
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
 // settings
+
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
 int main()
@@ -72,4 +76,15 @@ int main()
     //---------------------------------------------------------------
     glfwTerminate();
     return 0;
+}
+*/
+
+int main( int argc, const char* argv[])
+{
+    std::cout << "===== Vector Class Testing =====" << std::endl;
+    std::cout << "==Vector 3 Testing==" << std::endl;
+    Stupefy::vector3 vec3(0, 1, 0);
+    std::cout << "==Vector 2 Testing==" << std::endl;
+    Stupefy::vector2 vec2(1, 2);
+    std::cin.get();
 }

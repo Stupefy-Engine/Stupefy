@@ -1,11 +1,11 @@
 /****************************************************************************/
-/*  vector2.h                                                               */
+/*  math_functions.h                                                        */
 /****************************************************************************/
 /*                          This file is a part of:                         */
 /*                              STUPEFY ENGINE                              */
 /*                                                                          */
 /****************************************************************************/
-/*  Copyright[2019] Harshit Bargujar                                        */
+/*  Copyright[2020] Harshit Bargujar                                        */
 /*                                                                          */
 /*  Licensed under the Apache License, Version 2.0 (the "License");         */
 /*  you may not use this file except in compliance with the License.        */
@@ -16,9 +16,19 @@
 /*  Unless required by applicable law or agreed to in writing, software     */
 /*  distributed under the License is distributed on an "AS IS" BASIS,       */
 /*  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.*/
-/*  See the License for the specific language governing permissionsand      */
+/*  See the License for the specific language governing permissions and     */
 /*  limitations under the License.                                          */
 /****************************************************************************/
 
 
 #pragma once
+
+#include "core/core_common.h"
+
+#define PI 3.14 //temporary
+/*
+	PI needs actual definition in Quaternion
+*/
+
+#define DegreesToRadian(angle) angle * PI/180
+#define RadianToDegrees(angle) angle * 180/PI

@@ -8,3 +8,6 @@ builds/
 **vcxproj
 **vcxproj.filters
 **.vcxproj.user
+
+bin/
+bin-int/
