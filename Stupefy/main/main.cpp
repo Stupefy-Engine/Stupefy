@@ -25,7 +25,7 @@
 #include "core/math/vector3.h"
 #include "core/math/vector2.h"
 
-/*
+
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
@@ -35,7 +35,7 @@ const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
 int main()
 {
-    // glfw: initialize and configure
+	// glfw: initialize and configure
     // ------------------------------
     glfwInit();
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
@@ -61,6 +61,18 @@ int main()
         std::cout << "Failed to initialize GLAD" << std::endl;
         return -1;
     }
+
+    //==========================================================
+    //==================VECTOR TEST CLASS=======================
+    //==========================================================
+	std::cout << "===== Vector Class Testing =====" << std::endl;
+	std::cout << "==Vector 3 Testing==" << std::endl;
+	Stupefy::vector3 vec3(0, 1, 0);
+	std::cout << "==Vector 2 Testing==" << std::endl;
+	Stupefy::vector2 vec2(1, 2);
+    //==========================================================
+
+
     // render loop
     // -----------
     while (!glfwWindowShouldClose(window))
@@ -76,15 +88,4 @@ int main()
     //---------------------------------------------------------------
     glfwTerminate();
     return 0;
-}
-*/
-
-int main( int argc, const char* argv[])
-{
-    std::cout << "===== Vector Class Testing =====" << std::endl;
-    std::cout << "==Vector 3 Testing==" << std::endl;
-    Stupefy::vector3 vec3(0, 1, 0);
-    std::cout << "==Vector 2 Testing==" << std::endl;
-    Stupefy::vector2 vec2(1, 2);
-    std::cin.get();
 }
