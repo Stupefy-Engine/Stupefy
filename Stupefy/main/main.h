@@ -22,5 +22,3 @@
 
 
 #pragma once
-
-#include "core/core_common.h"

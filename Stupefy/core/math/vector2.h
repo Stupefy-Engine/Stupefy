@@ -23,7 +23,6 @@
 
 #pragma once
 
-#include "core/core_common.h"
 #include "core/math/math_functions.h"
 
 namespace Stupefy

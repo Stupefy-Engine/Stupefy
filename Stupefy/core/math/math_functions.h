@@ -23,8 +23,6 @@
 
 #pragma once
 
-#include "core/core_common.h"
-
 #define PI 3.14 //temporary
 /*
 	PI needs actual definition in Quaternion

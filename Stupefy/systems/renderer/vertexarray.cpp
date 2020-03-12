@@ -1,5 +1,5 @@
 /****************************************************************************/
-/*  scene_gui.cpp                                                           */
+/*  vertexarray.cpp                                                         */
 /****************************************************************************/
 /*                          This file is a part of:                         */
 /*                              STUPEFY ENGINE                              */
@@ -19,3 +19,11 @@
 /*  See the License for the specific language governing permissions and     */
 /*  limitations under the License.                                          */
 /****************************************************************************/
+
+
+#include "systems/renderer/vertexarray.h"
+
+namespace Stupefy
+{
+	
+}

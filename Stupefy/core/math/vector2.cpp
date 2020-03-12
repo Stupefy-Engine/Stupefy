@@ -21,6 +21,7 @@
 /****************************************************************************/
 
 
+#include "core/core_common.h"
 #include "core/math/vector2.h"
 
 namespace Stupefy
