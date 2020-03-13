@@ -9,5 +9,14 @@ builds/
 **vcxproj.filters
 **.vcxproj.user
 
+Stupefy/thirdparty/glfw/bin/
+Stupefy/thirdparty/glfw/bin-int/
+Stupefy/thirdparty/glfw/GLFW.vcxproj
+Stupefy/thirdparty/glfw/GLFW.vcxproj.filters
+
 bin/
 bin-int/
+
+#Construction Systems
+SConstruct
+premake5.lua
