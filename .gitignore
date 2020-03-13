@@ -12,11 +12,5 @@ builds/
 bin/
 bin-int/
 
-#Third Party Files And Folders
-Stupefy/thirdparty/glfw/bin/
-Stupefy/thirdparty/glfw/bin-int/
-Stupefy/thirdparty/glfw/GLFW.vcxproj
-Stupefy/thirdparty/glfw/GLFW.vcxproj.filters
-
 #Construction Systems
 SConstruct
