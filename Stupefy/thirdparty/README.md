@@ -12,6 +12,16 @@
 - Version : 0.1.33
 - License : MIT
 
+## glfw
+- Upstream : https://github.com/glfw/glfw
+- Version : 3.3.2
+- License : Zlib
+
+## premake
+- Upstream : https://github.com/premake/premake-core
+- Version : 5.0
+- License : BSD-3-Clause
+
 ## vulkan
 - Upstream : https://github.com/KhronosGroup/Vulkan-Loader
 - Version : 1.1.127

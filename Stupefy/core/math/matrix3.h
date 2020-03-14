@@ -24,6 +24,7 @@
 #pragma once
 
 #include "core/math/math_functions.h"
+#include "core/math/vector3.h"
 
 namespace Stupefy
 {
@@ -41,18 +42,25 @@ namespace Stupefy
 
 		const matrix3 operator+(const matrix3& m);
 		const matrix3 operator*(const float s);
+		const matrix3 operator*(const matrix3& m);
+
+		const vector3 operator*(const vector3& v);
 		
 		void operator+=(const matrix3& m);
 		void operator*=(const float s);
+		void operator*=(const matrix3& m);
+
+		const vector3 transformVectorByMatrix(const vector3& v);
 
 		void setIdentityMatrix();
 		void setInverseOfMatrix(const matrix3& m);
 
-		const void getInverse();
+		const matrix3 getInverse();
 		void invertMatrix();
 		const float getDeterminent();
 		void setTransposeMatrix(const matrix3& m);
 		const matrix3 getTranspose(const matrix3& m);
+		void invertAndTranspose();
 
 		void matrixRotateXByAngle(float uAngle);
 		void matrixRotateYByAngle(float uAngle);
