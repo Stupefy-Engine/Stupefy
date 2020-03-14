@@ -23,7 +23,7 @@
 
 #pragma once
 
-namespace Stupefy
+namespace Renderer
 {
 	class vertexarray
 	{

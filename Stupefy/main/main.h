@@ -22,3 +22,21 @@
 
 
 #pragma once
+
+#include "core/core_common.h"
+/*
+int main(int argc, char** argv);
+
+namespace Stupefy
+{
+	class application
+	{
+	public:
+		application();
+		virtual ~application();
+
+	private:
+		void run();
+	};
+}
+*/

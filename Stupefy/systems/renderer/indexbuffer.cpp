@@ -23,7 +23,7 @@
 
 #include "systems/renderer/indexbuffer.h"
 
-namespace Stupefy
+namespace Renderer
 {
 	
 }

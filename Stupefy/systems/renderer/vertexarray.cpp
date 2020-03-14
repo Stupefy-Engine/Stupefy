@@ -23,7 +23,7 @@
 
 #include "systems/renderer/vertexarray.h"
 
-namespace Stupefy
+namespace Renderer
 {
 	
 }

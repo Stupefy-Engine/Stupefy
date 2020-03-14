@@ -23,7 +23,7 @@
 
 #include "systems/renderer/textures.h"
 
-namespace Stupefy
+namespace Renderer
 {
 
 }

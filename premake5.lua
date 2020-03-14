@@ -8,7 +8,7 @@ workspace "Stupefy"
         "Dist"
     }
 
-outputdir = "%{cfg.buildcfg}-%{cfg.system}-%cfg.architecture}"
+outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir = {}
 IncludeDir["GLFW"] = "Stupefy/thirdparty/glfw/include"
@@ -27,7 +27,7 @@ project "Stupefy"
     cppdialect "C++17"
 
     targetdir("bin/"..outputdir.."/%{prj.name}")
-    objdir("bin/"..outputdir.."/%{prj.name}")
+    objdir("bin-int/"..outputdir.."/%{prj.name}")
 
    files
     {

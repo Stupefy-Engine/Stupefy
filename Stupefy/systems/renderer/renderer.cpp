@@ -23,7 +23,7 @@
 
 #include "systems/renderer/renderer.h"
 
-namespace Stupefy
+namespace Renderer
 {
 	
 }

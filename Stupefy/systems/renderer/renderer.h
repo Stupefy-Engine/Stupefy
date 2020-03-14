@@ -26,7 +26,7 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
-namespace Stupefy
+namespace Renderer
 {
 	class renderer
 	{
