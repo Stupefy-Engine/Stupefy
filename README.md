@@ -18,6 +18,11 @@ the major desktop platforms (Linux, Mac OSX, Windows) as well as mobile
 The official documentation is hosted on [ReadTheDocs](https://stupefy-docs.readthedocs.io/en/latest/#).
 It is maintained by the Stupefy community in its own [GitHub repository](https://github.com/Stupefy-Engine/Stupefy-docs).
 
+### Building Engine
+
+Stupefy Engine can be built from its source by running the Win-Gen.bat from scripts.
+The default building is for Visual Studio 2019.
+
 
 [![Travis Build Status](https://travis-ci.org/Stupefy-Engine/Stupefy.svg?branch=master)](https://travis-ci.org/Stupefy-Engine/Stupefy)
 

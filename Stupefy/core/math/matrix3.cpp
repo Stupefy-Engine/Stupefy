@@ -1,5 +1,5 @@
 /****************************************************************************/
-/*  renderer.h                                                              */
+/*  matrix3.cpp                                                             */
 /****************************************************************************/
 /*                          This file is a part of:                         */
 /*                              STUPEFY ENGINE                              */
@@ -21,15 +21,110 @@
 /****************************************************************************/
 
 
-#pragma once
-
-#include <glad/glad.h>
-#include <GLFW/glfw3.h>
+#include "core/math/matrix3.h"
 
 namespace Stupefy
 {
-	class renderer
+	matrix3::matrix3(){}
+	matrix3::~matrix3(){}
+
+	matrix3::matrix3(float m0, float m3, float m6, float m1, float m4, float m7, float m2, float m5, float m8)
 	{
 
-	};
+	}
+
+	matrix3& matrix3::operator=(const matrix3& val)
+	{
+
+	}
+
+	const matrix3 matrix3::operator+(const matrix3& m)
+	{
+
+	}
+
+	const matrix3 matrix3::operator*(const float s)
+	{
+
+	}
+
+	void matrix3::operator+=(const matrix3& m)
+	{
+
+	}
+
+	void matrix3::operator*=(const float s)
+	{
+
+	}
+
+	void matrix3::setIdentityMatrix()
+	{
+
+	}
+
+	void matrix3::setInverseOfMatrix(const matrix3& m)
+	{
+
+	}
+
+	const void matrix3::getInverse()
+	{
+
+	}
+
+	void matrix3::invertMatrix()
+	{
+
+	}
+
+	const float matrix3::getDeterminent()
+	{
+
+	}
+
+	void matrix3::setTransposeMatrix(const matrix3& m)
+	{
+
+	}
+
+	const matrix3 matrix3::getTranspose(const matrix3& m)
+	{
+
+	}
+
+	void matrix3::matrixRotateXByAngle(float uAngle)
+	{
+
+	}
+
+	void matrix3::matrixRotateYByAngle(float uAngle)
+	{
+
+	}
+
+	void matrix3::matrixRotateZByAngle(float uAngle)
+	{
+
+	}
+
+	void matrix3::matrixTransformXByAngle(float uAngle)
+	{
+
+	}
+
+	void matrix3::matrixTransformYByAngle(float uAngle)
+	{
+
+	}
+
+	void matrix3::matrixTransformZByAngle(float uAngle)
+	{
+
+	}
+
+	void matrix3::show()
+	{
+
+	}
 }

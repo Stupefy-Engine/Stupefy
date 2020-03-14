@@ -1,5 +1,5 @@
 /****************************************************************************/
-/*  renderer.h                                                              */
+/*  matrix3.h                                                               */
 /****************************************************************************/
 /*                          This file is a part of:                         */
 /*                              STUPEFY ENGINE                              */
@@ -23,13 +23,45 @@
 
 #pragma once
 
-#include <glad/glad.h>
-#include <GLFW/glfw3.h>
+#include "core/math/math_functions.h"
 
 namespace Stupefy
 {
-	class renderer
+	class matrix3
 	{
+	public:
 
+		float matrixData[9] = { 0.0 };
+
+		matrix3();
+		~matrix3();
+
+		matrix3(float m0, float m3, float m6, float m1, float m4, float m7, float m2, float m5, float m8);
+		matrix3& operator=(const matrix3& val);
+
+		const matrix3 operator+(const matrix3& m);
+		const matrix3 operator*(const float s);
+		
+		void operator+=(const matrix3& m);
+		void operator*=(const float s);
+
+		void setIdentityMatrix();
+		void setInverseOfMatrix(const matrix3& m);
+
+		const void getInverse();
+		void invertMatrix();
+		const float getDeterminent();
+		void setTransposeMatrix(const matrix3& m);
+		const matrix3 getTranspose(const matrix3& m);
+
+		void matrixRotateXByAngle(float uAngle);
+		void matrixRotateYByAngle(float uAngle);
+		void matrixRotateZByAngle(float uAngle);
+
+		void matrixTransformXByAngle(float uAngle);
+		void matrixTransformYByAngle(float uAngle);
+		void matrixTransformZByAngle(float uAngle);
+
+		void show();
 	};
 }

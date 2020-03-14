@@ -26,13 +26,12 @@
 #include "core/math/vector2.h"
 #include "main.h"
 
-#include <glad/glad.h>
-#include <GLFW/glfw3.h>
-
+#include "systems/renderer/renderer.h"
 // settings
 
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
+
 int main()
 {
 	// glfw: initialize and configure
