@@ -20,7 +20,7 @@ It is maintained by the Stupefy community in its own [GitHub repository](https:/
 
 ### Getting Started
 
-Visual Studio 2017 or 2019 is recommended, Hazel is officially untested on other development environments whilst we focus on a Windows build.
+Visual Studio 2017 or 2019 is recommended, Stupefy is currently for Windows only!
 
 You can clone the repository to a local destination using git:
 
