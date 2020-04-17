@@ -11,12 +11,14 @@ workspace "Stupefy"
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir = {}
-IncludeDir["GLFW"] = "Stupefy/thirdparty/glfw/include"
-IncludeDir["glad"] = "Stupefy/thirdparty/glad/include"
+IncludeDir["GLFW"] = "Stupefy/thirdparty/GLFW/include"
+IncludeDir["Glad"] = "Stupefy/thirdparty/Glad/include"
+IncludeDir["vulkan"] = "Stupefy/thirdparty/vulkan/include"
 
 group "thirdparty"
-    include "Stupefy/thirdparty/glad"
-    include "Stupefy/thirdparty/glfw"
+    include "Stupefy/thirdparty/GLFW"
+    include "Stupefy/thirdparty/Glad"
+    include "Stupefy/thirdparty/vulkan"
 
 group ""
 
@@ -35,18 +37,25 @@ project "Stupefy"
         "%{prj.name}/**.cpp"
     }
 
+    defines
+	{
+		"_CRT_SECURE_NO_WARNINGS"
+	}
+
     includedirs
     {
         "%{prj.name}",
         "%{IncludeDir.GLFW}",
-        "%{IncludeDir.glad}"
+        "%{IncludeDir.Glad}",
+        "%{IncludeDir.vulkan}"
     }
 
     links
     {
         "GLFW",
         "Glad",
-        "opengl32.lib"
+        "opengl32.lib",
+        "Stupefy/thirdparty/vulkan/Lib/vulkan-1.lib"
     }
 
     filter "system:windows"

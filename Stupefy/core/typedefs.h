@@ -1,5 +1,5 @@
 /****************************************************************************/
-/*  vector3.h                                                               */
+/*  typedefs.h                                                              */
 /****************************************************************************/
 /*                          This file is a part of:                         */
 /*                              STUPEFY ENGINE                              */
@@ -23,52 +23,16 @@
 
 #pragma once
 
-#include "core/core_common.h"
-#include "core/math/math_functions.h"
+typedef unsigned long long int	U64;	
+typedef unsigned long int		U32;
+typedef unsigned short int		U16;
+typedef unsigned char			U8;
 
-namespace Stupefy
-{
-	class vector3
-	{
-	public:
-		F32 x, y, z;
+typedef signed long long int	S64;
+typedef signed long int			S32;
+typedef signed short int		S16;
+typedef signed char				S8;
 
-		vector3();
-		~vector3();
-		vector3(F32 uX, F32 uY, F32 uZ);
-
-		vector3(const vector3& v);
-		vector3& operator=(const vector3& v);
-
-		const vector3 operator+(const vector3& v);
-		const vector3 operator-(const vector3& v);
-		const vector3 operator*(const F32 s);
-		const vector3 operator/(const F32 s);
-
-		void operator+=(const vector3& v);
-		void operator-=(const vector3& v);
-		void operator*=(const F32 s);
-		void operator/=(const F32 s);
-
-		const F32 operator*(const vector3& v);
-		const F32 dot(const vector3& v);
-		F32 angle(const vector3& v);
-
-		const vector3 operator%(const vector3& v);
-		void operator%=(const vector3& v);
-		const vector3 cross(const vector3& v);
-
-		void conjugate();
-		void normalize();
-		void zero();
-		void absolute();
-
-		F32 magnitude();
-		F32 magnitudeSquare();
-
-		vector3 rotateVectorAboutAngleAndAxis(F32 uAngle, vector3& uAxis);
-
-		void show();
-		void negate();
-	};
-}
+typedef long double				F96;
+typedef double					F64;
+typedef float					F32;

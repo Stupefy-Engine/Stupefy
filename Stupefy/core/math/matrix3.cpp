@@ -21,14 +21,13 @@
 /****************************************************************************/
 
 
-#include "core/core_common.h"
 #include "core/math/matrix3.h"
 
 namespace Stupefy
 {
 	matrix3::matrix3()
 	{
-		for (int i = 0; i < 9; i++)
+		for (S32 i = 0; i < 9; i++)
 		{
 			matrixData[i] = 0.0f;
 		}
@@ -38,7 +37,7 @@ namespace Stupefy
 
 	matrix3::~matrix3(){}
 
-	matrix3::matrix3(float m0, float m3, float m6, float m1, float m4, float m7, float m2, float m5, float m8)
+	matrix3::matrix3(F32 m0, F32 m3, F32 m6, F32 m1, F32 m4, F32 m7, F32 m2, F32 m5, F32 m8)
 	{
 		matrixData[0] = m0;
 		matrixData[3] = m3;
@@ -55,7 +54,7 @@ namespace Stupefy
 
 	matrix3& matrix3::operator=(const matrix3& val)
 	{
-		for (int i = 0; i < 9; i++)
+		for (S32 i = 0; i < 9; i++)
 		{
 			matrixData[i] = val.matrixData[i];
 		}
@@ -82,7 +81,7 @@ namespace Stupefy
 		return n;
 	}
 
-	const matrix3 matrix3::operator*(const float s)
+	const matrix3 matrix3::operator*(const F32 s)
 	{
 		matrix3 n;
 
@@ -140,7 +139,7 @@ namespace Stupefy
 		matrixData[8] += m.matrixData[8];
 	}
 
-	void matrix3::operator*=(const float s)
+	void matrix3::operator*=(const F32 s)
 	{
 		matrixData[0] *= s;
 		matrixData[3] *= s;
@@ -157,9 +156,9 @@ namespace Stupefy
 
 	void matrix3::operator*=(const matrix3& m)
 	{
-		float data1;
-		float data2;
-		float data3;
+		F32 data1;
+		F32 data2;
+		F32 data3;
 
 		data1 = matrixData[0] * m.matrixData[0] + matrixData[3] * m.matrixData[1] + matrixData[6] * m.matrixData[2];
 		data2 = matrixData[0] * m.matrixData[3] + matrixData[3] * m.matrixData[4] + matrixData[6] * m.matrixData[5];
@@ -193,7 +192,7 @@ namespace Stupefy
 
 	void matrix3::setIdentityMatrix()
 	{
-		for (int i = 0; i < 9; i++)
+		for (S32 i = 0; i < 9; i++)
 		{
 			matrixData[i] = 0.0f;
 		}
@@ -203,36 +202,36 @@ namespace Stupefy
 
 	void matrix3::setInverseOfMatrix(const matrix3& m)
 	{
-		float data1 = m.matrixData[0] * m.matrixData[4];
-		float data2 = m.matrixData[0] * m.matrixData[7];
-		float data3 = m.matrixData[3] * m.matrixData[1];
-		float data4 = m.matrixData[6] * m.matrixData[1];
-		float data5 = m.matrixData[3] * m.matrixData[2];
-		float data6 = m.matrixData[6] * m.matrixData[2];
+		F32 data1 = m.matrixData[0] * m.matrixData[4];
+		F32 data2 = m.matrixData[0] * m.matrixData[7];
+		F32 data3 = m.matrixData[3] * m.matrixData[1];
+		F32 data4 = m.matrixData[6] * m.matrixData[1];
+		F32 data5 = m.matrixData[3] * m.matrixData[2];
+		F32 data6 = m.matrixData[6] * m.matrixData[2];
 
-		float determinent = (
+		F32 determinent = (
 			data1 * m.matrixData[8] - data2 * m.matrixData[5] - data3 * m.matrixData[8] + data4 * m.matrixData[5] + data5 * m.matrixData[7] - data6 * m.matrixData[4]);
 
 		if (determinent == 0.0) return;
 
-		float invd = 1.0f / determinent;
+		F32 invd = 1.0f / determinent;
 
-		float m0 = (m.matrixData[4] * m.matrixData[8] - m.matrixData[7] * m.matrixData[5]) * invd;
-		float m3 = -(m.matrixData[3] * m.matrixData[8] - m.matrixData[6] * m.matrixData[5]) * invd;
+		F32 m0 = (m.matrixData[4] * m.matrixData[8] - m.matrixData[7] * m.matrixData[5]) * invd;
+		F32 m3 = -(m.matrixData[3] * m.matrixData[8] - m.matrixData[6] * m.matrixData[5]) * invd;
 
-		float m6 = (m.matrixData[3] * m.matrixData[7] - m.matrixData[6] * m.matrixData[4]) * invd;
+		F32 m6 = (m.matrixData[3] * m.matrixData[7] - m.matrixData[6] * m.matrixData[4]) * invd;
 
-		float m1 = -(m.matrixData[1] * m.matrixData[8] - m.matrixData[7] * m.matrixData[2]) * invd;
+		F32 m1 = -(m.matrixData[1] * m.matrixData[8] - m.matrixData[7] * m.matrixData[2]) * invd;
 
-		float m4 = (m.matrixData[0] * m.matrixData[8] - data6) * invd;
+		F32 m4 = (m.matrixData[0] * m.matrixData[8] - data6) * invd;
 
-		float m7 = -(data2 - data4) * invd;
+		F32 m7 = -(data2 - data4) * invd;
 
-		float m2 = (m.matrixData[1] * m.matrixData[5] - m.matrixData[4] * m.matrixData[2]) * invd;
+		F32 m2 = (m.matrixData[1] * m.matrixData[5] - m.matrixData[4] * m.matrixData[2]) * invd;
 
-		float m5 = -(m.matrixData[0] * m.matrixData[5] - data5) * invd;
+		F32 m5 = -(m.matrixData[0] * m.matrixData[5] - data5) * invd;
 
-		float m8 = (data1 - data3) * invd;
+		F32 m8 = (data1 - data3) * invd;
 
 		matrixData[0] = m0;
 		matrixData[3] = m3;
@@ -259,16 +258,16 @@ namespace Stupefy
 		setInverseOfMatrix(*this);
 	}
 
-	const float matrix3::getDeterminent()
+	const F32 matrix3::getDeterminent()
 	{
-		float data1 = matrixData[0] * matrixData[4];
-		float data2 = matrixData[0] * matrixData[7];
-		float data3 = matrixData[3] * matrixData[1];
-		float data4 = matrixData[6] * matrixData[1];
-		float data5 = matrixData[3] * matrixData[2];
-		float data6 = matrixData[6] * matrixData[2];
+		F32 data1 = matrixData[0] * matrixData[4];
+		F32 data2 = matrixData[0] * matrixData[7];
+		F32 data3 = matrixData[3] * matrixData[1];
+		F32 data4 = matrixData[6] * matrixData[1];
+		F32 data5 = matrixData[3] * matrixData[2];
+		F32 data6 = matrixData[6] * matrixData[2];
 	
-		float determinent = (
+		F32 determinent = (
 			data1 * matrixData[8] - data2 * matrixData[5] - data3 * matrixData[8] + data4 * matrixData[5] + data5 * matrixData[7] - data6 * matrixData[4]);
 
 		return determinent;
@@ -298,7 +297,7 @@ namespace Stupefy
 
 	void matrix3::invertAndTranspose()
 	{
-		float determinent = matrixData[0] * (matrixData[4] * matrixData[8] - matrixData[5] * matrixData[7]) - matrixData[3] * (matrixData[1] * matrixData[8] - matrixData[2] * matrixData[7]) + matrixData[6] * (matrixData[1] * matrixData[5] - matrixData[2] * matrixData[4]);
+		F32 determinent = matrixData[0] * (matrixData[4] * matrixData[8] - matrixData[5] * matrixData[7]) - matrixData[3] * (matrixData[1] * matrixData[8] - matrixData[2] * matrixData[7]) + matrixData[6] * (matrixData[1] * matrixData[5] - matrixData[2] * matrixData[4]);
 
 		matrix3 transpose;
 
@@ -314,7 +313,7 @@ namespace Stupefy
 		transpose.matrixData[7] = matrixData[5];
 		transpose.matrixData[8] = matrixData[8];
 
-		float m11, m12, m13, m21, m22, m23, m31, m32, m33;
+		F32 m11, m12, m13, m21, m22, m23, m31, m32, m33;
 
 		m11 = +(transpose.matrixData[4] * transpose.matrixData[8] - transpose.matrixData[5] * transpose.matrixData[7]) / determinent;
 		m12 = -(transpose.matrixData[1] * transpose.matrixData[8] - transpose.matrixData[2] * transpose.matrixData[7]) / determinent;
@@ -355,7 +354,7 @@ namespace Stupefy
 		matrixData[8] = preResult.matrixData[8];
 	}
 
-	void matrix3::matrixRotateXByAngle(float uAngle)
+	void matrix3::matrixRotateXByAngle(F32 uAngle)
 	{
 		uAngle = DegreesToRadian(uAngle);
 
@@ -369,7 +368,7 @@ namespace Stupefy
 		*this = m * (*this);
 	}
 
-	void matrix3::matrixRotateYByAngle(float uAngle)
+	void matrix3::matrixRotateYByAngle(F32 uAngle)
 	{
 		uAngle = DegreesToRadian(uAngle);
 		(*this).setIdentityMatrix();
@@ -382,7 +381,7 @@ namespace Stupefy
 		*this = m * (*this);
 	}
 
-	void matrix3::matrixRotateZByAngle(float uAngle)
+	void matrix3::matrixRotateZByAngle(F32 uAngle)
 	{
 		uAngle = DegreesToRadian(uAngle);
 		(*this).setIdentityMatrix();
@@ -395,7 +394,7 @@ namespace Stupefy
 		*this = m * (*this);
 	}
 
-	void matrix3::matrixTransformXByAngle(float uAngle)
+	void matrix3::matrixTransformXByAngle(F32 uAngle)
 	{
 		uAngle = DegreesToRadian(uAngle);
 
@@ -407,7 +406,7 @@ namespace Stupefy
 		*this = m * (*this);
 	}
 
-	void matrix3::matrixTransformYByAngle(float uAngle)
+	void matrix3::matrixTransformYByAngle(F32 uAngle)
 	{
 		uAngle = DegreesToRadian(uAngle);
 
@@ -419,7 +418,7 @@ namespace Stupefy
 		*this = m * (*this);
 	}
 
-	void matrix3::matrixTransformZByAngle(float uAngle)
+	void matrix3::matrixTransformZByAngle(F32 uAngle)
 	{
 		uAngle = DegreesToRadian(uAngle);
 

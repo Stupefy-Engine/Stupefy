@@ -23,6 +23,7 @@
 
 #pragma once
 
+#include "core/core_common.h"
 #include "core/math/math_functions.h"
 #include "core/math/vector3.h"
 #include "core/math/matrix3.h"

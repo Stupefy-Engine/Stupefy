@@ -21,7 +21,6 @@
 /****************************************************************************/
 
 
-#include "core/core_common.h"
 #include "core/math/quaternions.h"
 
 namespace Stupefy

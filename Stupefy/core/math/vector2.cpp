@@ -21,7 +21,6 @@
 /****************************************************************************/
 
 
-#include "core/core_common.h"
 #include "core/math/vector2.h"
 
 namespace Stupefy
@@ -30,7 +29,7 @@ namespace Stupefy
 
 	vector2::~vector2() {}
 
-	vector2::vector2(float uX, float uY) : x(uX), y(uY) {}
+	vector2::vector2(F32 uX, F32 uY) : x(uX), y(uY) {}
 
 	vector2::vector2(const vector2& v) : x(v.x), y(v.y) {}
 
@@ -51,12 +50,12 @@ namespace Stupefy
 		return vector2(x - v.x, y - v.y);
 	}
 
-	const vector2 vector2::operator*(const float s)
+	const vector2 vector2::operator*(const F32 s)
 	{
 		return vector2(x * s, y * s);
 	}
 
-	const vector2 vector2::operator/(const float s)
+	const vector2 vector2::operator/(const F32 s)
 	{
 		return vector2(x / s, y / s);
 	}
@@ -72,24 +71,24 @@ namespace Stupefy
 		y -= v.y;
 	}
 
-	void vector2::operator*=(const float s)
+	void vector2::operator*=(const F32 s)
 	{
 		x *= s;
 		y *= s;
 	}
 
-	void vector2::operator/=(const float s)
+	void vector2::operator/=(const F32 s)
 	{
 		x /= s;
 		y /= s;
 	}
 
-	const float vector2::operator*(const vector2& v)
+	const F32 vector2::operator*(const vector2& v)
 	{
 		return (x * v.x + y * v.x);
 	}
 
-	const float vector2::dot(const vector2& v)
+	const F32 vector2::dot(const vector2& v)
 	{
 		return (x * v.x + y * v.y);
 	}
@@ -102,10 +101,10 @@ namespace Stupefy
 
 	void vector2::normalize()
 	{
-		float mag = sqrt(x * x + y * y);
+		F32 mag = sqrt(x * x + y * y);
 		if (mag > 0.0f)
 		{
-			float oneOverMag = 1.0f / mag;
+			F32 oneOverMag = 1.0f / mag;
 			x = x * oneOverMag;
 			y = y * oneOverMag;
 		}
@@ -123,15 +122,15 @@ namespace Stupefy
 		y = abs(y);
 	}
 
-	float vector2::magnitude()
+	F32 vector2::magnitude()
 	{
-		float magnitude = std::sqrt(x * x + y * y);
+		F32 magnitude = std::sqrt(x * x + y * y);
 		return magnitude;
 	}
 
-	float vector2::magnitudeSquare()
+	F32 vector2::magnitudeSquare()
 	{
-		float magnitude = x * x + y * y;
+		F32 magnitude = x * x + y * y;
 		return magnitude;
 	}
 

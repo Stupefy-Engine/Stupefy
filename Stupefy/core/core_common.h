@@ -33,7 +33,12 @@
 #include <algorithm>
 #include <ctime>
 #include <math.h>
+#include <chrono>
+#include <exception>
+#include <stdio.h>
 
+
+#include "typedefs.h"
 
 /*#ifdef SF_PLATFORM_WINDOWS
     #ifdef SF_BUILD_DLL

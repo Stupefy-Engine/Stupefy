@@ -32,22 +32,22 @@ namespace Stupefy
 	{
 	public:
 
-		float matrixData[9] = { 0.0 };
+		F32 matrixData[9] = { 0.0 };
 
 		matrix3();
 		~matrix3();
 
-		matrix3(float m0, float m3, float m6, float m1, float m4, float m7, float m2, float m5, float m8);
+		matrix3(F32 m0, F32 m3, F32 m6, F32 m1, F32 m4, F32 m7, F32 m2, F32 m5, F32 m8);
 		matrix3& operator=(const matrix3& val);
 
 		const matrix3 operator+(const matrix3& m);
-		const matrix3 operator*(const float s);
+		const matrix3 operator*(const F32 s);
 		const matrix3 operator*(const matrix3& m);
 
 		const vector3 operator*(const vector3& v);
 		
 		void operator+=(const matrix3& m);
-		void operator*=(const float s);
+		void operator*=(const F32 s);
 		void operator*=(const matrix3& m);
 
 		const vector3 transformVectorByMatrix(const vector3& v);
@@ -57,18 +57,18 @@ namespace Stupefy
 
 		const matrix3 getInverse();
 		void invertMatrix();
-		const float getDeterminent();
+		const F32 getDeterminent();
 		void setTransposeMatrix(const matrix3& m);
 		const matrix3 getTranspose(const matrix3& m);
 		void invertAndTranspose();
 
-		void matrixRotateXByAngle(float uAngle);
-		void matrixRotateYByAngle(float uAngle);
-		void matrixRotateZByAngle(float uAngle);
+		void matrixRotateXByAngle(F32 uAngle);
+		void matrixRotateYByAngle(F32 uAngle);
+		void matrixRotateZByAngle(F32 uAngle);
 
-		void matrixTransformXByAngle(float uAngle);
-		void matrixTransformYByAngle(float uAngle);
-		void matrixTransformZByAngle(float uAngle);
+		void matrixTransformXByAngle(F32 uAngle);
+		void matrixTransformYByAngle(F32 uAngle);
+		void matrixTransformZByAngle(F32 uAngle);
 
 		void show();
 	};
