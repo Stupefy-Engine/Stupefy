@@ -1,5 +1,5 @@
 /****************************************************************************/
-/*  main.h                                                                  */
+/*  logger.h                                                                */
 /****************************************************************************/
 /*                          This file is a part of:                         */
 /*                              STUPEFY ENGINE                              */
@@ -23,21 +23,17 @@
 
 #pragma once
 
-#include "core/core_common.h"
-#include "editor/logger/logger.h"
-/*
-int main(int argc, char** argv);
+#include "core\core_common.h"
 
 namespace Stupefy
 {
-	class application
+	class Logger
 	{
 	public:
-		application();
-		virtual ~application();
-
-	private:
-		void run();
+		static void Trace(const char* message, ...);
+		static void Log(const char* message, ...);
+		static void Warn(const char* message, ...);
+		static void Error(const char* message, ...);
+		static void Fatal(const char* message, ...);
 	};
 }
-*/

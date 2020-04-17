@@ -18,6 +18,16 @@ the major desktop platforms (Linux, Mac OSX, Windows) as well as mobile
 The official documentation is hosted on [ReadTheDocs](https://stupefy-docs.readthedocs.io/en/latest/#).
 It is maintained by the Stupefy community in its own [GitHub repository](https://github.com/Stupefy-Engine/Stupefy-docs).
 
+### Getting Started
+
+Visual Studio 2017 or 2019 is recommended, Hazel is officially untested on other development environments whilst we focus on a Windows build.
+
+You can clone the repository to a local destination using git:
+
+git clone `--recursive https://github.com/Stupefy-Engine/Stupefy`
+
+Make sure that you do a `--recursive` clone to fetch all of the submodules!
+
 ### Building Engine
 
 Stupefy Engine can be built from its source by running the Win-Gen.bat from scripts.

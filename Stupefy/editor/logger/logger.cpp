@@ -1,5 +1,5 @@
 /****************************************************************************/
-/*  main.h                                                                  */
+/*  logger.cpp                                                              */
 /****************************************************************************/
 /*                          This file is a part of:                         */
 /*                              STUPEFY ENGINE                              */
@@ -21,23 +21,54 @@
 /****************************************************************************/
 
 
-#pragma once
-
-#include "core/core_common.h"
 #include "editor/logger/logger.h"
-/*
-int main(int argc, char** argv);
 
 namespace Stupefy
 {
-	class application
+	static void writeLog(const char* prepend, const char* message, va_list args)
 	{
-	public:
-		application();
-		virtual ~application();
+		vprintf((std::string(prepend) + message + "\n").c_str(), args);
+	}
 
-	private:
-		void run();
-	};
+	void Stupefy::Logger::Trace(const char* message, ...)
+	{
+		va_list args;
+		va_start(args, message);
+		writeLog("[TRACE]: ", message, args);
+		va_end(args);
+	}
+
+	void Stupefy::Logger::Log(const char* message, ...)
+	{
+		va_list args;
+		va_start(args, message);
+		writeLog("[LOG]: ", message, args);
+		va_end(args);
+	}
+
+	void Stupefy::Logger::Warn(const char* message, ...)
+	{
+		va_list args;
+		va_start(args, message);
+		writeLog("[WARN]: ", message, args);
+		va_end(args);
+	}
+
+	void Stupefy::Logger::Error(const char* message, ...)
+	{
+		va_list args;
+		va_start(args, message);
+		writeLog("[ERROR]: ", message, args);
+		va_end(args);
+	}
+
+	void Stupefy::Logger::Fatal(const char* message, ...)
+	{
+		va_list args;
+		va_start(args, message);
+		writeLog("[FATAL]: ", message, args);
+		va_end(args);
+
+		ASSERT(false);
+	}
 }
-*/

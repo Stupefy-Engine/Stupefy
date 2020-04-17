@@ -36,9 +36,11 @@
 #include <chrono>
 #include <exception>
 #include <stdio.h>
+#include <stdarg.h>
 
 
 #include "typedefs.h"
+#include "defines.h"
 
 /*#ifdef SF_PLATFORM_WINDOWS
     #ifdef SF_BUILD_DLL

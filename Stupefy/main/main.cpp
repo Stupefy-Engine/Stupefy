@@ -63,6 +63,7 @@ int main()
 	//==========================================================
 	//==================VECTOR TEST CLASS=======================
 	//==========================================================
+	Stupefy::Logger::Log("Initializing Stupefy Engine: ");
 	std::cout << "===== Vector Class Testing =====" << std::endl;
 	std::cout << "==Vector 3 Testing==" << std::endl;
 	Stupefy::vector3 vec3(0, 1, 0);
