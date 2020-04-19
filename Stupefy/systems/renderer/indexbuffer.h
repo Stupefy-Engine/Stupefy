@@ -23,10 +23,13 @@
 
 #pragma once
 
+#include "core/core_common.h"
+
 namespace Renderer
 {
-	class indexbuffer
+	class STUPEFY_API IndexBuffer
 	{
-
+		IndexBuffer();
+		~IndexBuffer();
 	};
 }

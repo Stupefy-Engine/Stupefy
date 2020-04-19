@@ -35,17 +35,19 @@
 #endif
 #endif
 
-#ifdef PLATFORM_WINDOWS
+
+#ifdef SF_PLATFORM_WINDOWS
 #define FORCEINLINE __forceinline
-#define FORCENOINLINE _declspec(noinline)
-/*#ifdef STUPEFY_BUILD_LIB
-#define STUPEFY_API __declspec(dllexport)
+#define FORCENOINLINE __declspec(noinline)
+    #ifdef SF_BUILD_DLL
+        #define STUPEFY_API __declspec(dllexport)
+    #else
+        #define STUPEFY_API __declspec(dllimport)
+    #endif
 #else
-#define STUPEFY_API __declspec(dllimport)
+    #error Stupefy supports Windows only!
 #endif
-#elif PLATFORM_LINUX || PLATFORM_MAC
-#define FORCEINLINE inline*/
-#endif
+
 
 #define ASSERTIONS_ENABLED
 #ifdef ASSERTIONS_ENABLED

@@ -1,5 +1,5 @@
 /****************************************************************************/
-/*  main.h                                                                  */
+/*  entrypoint.h                                                            */
 /****************************************************************************/
 /*                          This file is a part of:                         */
 /*                              STUPEFY ENGINE                              */
@@ -23,21 +23,16 @@
 
 #pragma once
 
-#include "core/core_common.h"
-#include "editor/logger/logger.h"
-/*
-int main(int argc, char** argv);
+#ifdef SF_PLATFORM_WINDOWS
 
-namespace Stupefy
+extern Stupefy::Application* Stupefy::CreateApplication();
+
+int main(int argc, char** argv)
 {
-	class application
-	{
-	public:
-		application();
-		virtual ~application();
-
-	private:
-		void run();
-	};
+	Stupefy::Logger::Log("Initializing Stupefy Engine: v%d.0", 1);
+	auto app = Stupefy::CreateApplication();
+	app->Run();
+	delete app;
 }
-*/
+
+#endif

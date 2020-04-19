@@ -23,9 +23,31 @@
 
 #include "core/math/vector3.h"
 #include "core/math/vector2.h"
-#include "main.h"
+#include "main_app.h"
 
 #include "systems/renderer/renderer.h"
+
+namespace Stupefy
+{
+
+	Application::Application()
+	{
+
+	}
+
+	Application::~Application()
+	{
+
+	}
+
+	void Application::Run()
+	{
+		while (true);
+	}
+
+}
+
+/*
 // settings
 
 const unsigned int SCR_WIDTH = 800;
@@ -87,4 +109,4 @@ int main()
 	//---------------------------------------------------------------
 	glfwTerminate();
 	return 0;
-}
+}*/

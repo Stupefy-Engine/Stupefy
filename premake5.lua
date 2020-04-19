@@ -1,5 +1,6 @@
 workspace "Stupefy"
     architecture "x64"
+    startproject "Sandbox"
 
     configurations
     {
@@ -20,14 +21,15 @@ group "thirdparty"
     include "Stupefy/thirdparty/Glad"
     include "Stupefy/thirdparty/vulkan"
 
-group ""
-
+    group ""
+    
 project "Stupefy"
     location "Stupefy"
-    kind "ConsoleApp"
+    kind "SharedLib"
     language "C++"
     cppdialect "C++17"
-
+    staticruntime "on"
+    
     targetdir("bin/"..outputdir.."/%{prj.name}")
     objdir("bin-int/"..outputdir.."/%{prj.name}")
 
@@ -60,13 +62,80 @@ project "Stupefy"
 
     filter "system:windows"
         systemversion "latest"
+
+        defines
+        {
+            "SF_PLATFORM_WINDOWS",
+            "SF_BUILD_DLL"
+        }
+
+        postbuildcommands
+        {
+            ("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
+        }
         
 	filter "configurations: Debug"
-		defines "SF_DEBUG"
-		symbols "On"
+        defines "SF_DEBUG"
+        runtime "Debug"
+        symbols "On"
+        
 	filter "configurations: Release"
-		defines "SF_RELEASE"
-		optimize "On"
+        defines "SF_RELEASE"
+        runtime "Release"
+        optimize "On"
+        
 	filter "configurations: Dist"
+        defines "SF_DIST"
+        runtime "Release"
+        optimize "On"
+
+
+project "Sandbox"
+    location "Sandbox"
+    kind "ConsoleApp"
+    language "C++"
+    cppdialect "C++17"
+    staticruntime "On"
+    
+    targetdir ("bin/" .. outputdir .. "/%{prj.name}")
+    objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+    
+    files
+    {
+        "%{prj.name}/**.h",
+        "%{prj.name}/**.cpp"
+    }
+    
+    includedirs
+    {
+        "Stupefy/thirdparty",
+        "Stupefy"
+    }
+    
+    links
+    {
+        "Stupefy"
+    }
+    
+    filter "system:windows"
+        systemversion "latest"
+
+        defines
+        {
+            "SF_PLATFORM_WINDOWS"
+        }
+    
+	filter "configurations:Debug"
+		defines "SF_DEBUG"
+		runtime "Debug"
+		symbols "on"
+
+	filter "configurations:Release"
+		defines "SF_RELEASE"
+		runtime "Release"
+		optimize "on"
+
+	filter "configurations:Dist"
 		defines "SF_DIST"
-		optimize "On"
+		runtime "Release"
+		optimize "on"

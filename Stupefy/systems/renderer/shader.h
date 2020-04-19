@@ -23,9 +23,11 @@
 
 #pragma once
 
+#include "core/core_common.h"
+
 namespace Renderer
 {
-	class shader
+	class STUPEFY_API Shader
 	{
 
 	};

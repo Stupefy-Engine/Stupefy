@@ -23,12 +23,14 @@
 
 #pragma once
 
-#include <glad/glad.h>
-#include <GLFW/glfw3.h>
+//#include <glad/glad.h>
+//#include <GLFW/glfw3.h>
+
+#include "core/core_common.h"
 
 namespace Renderer
 {
-	class renderer
+	class STUPEFY_API render
 	{
 
 	};

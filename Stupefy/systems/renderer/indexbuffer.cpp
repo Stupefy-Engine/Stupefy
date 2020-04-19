@@ -25,5 +25,13 @@
 
 namespace Renderer
 {
-	
+	IndexBuffer::IndexBuffer()
+	{
+
+	}
+
+	IndexBuffer::~IndexBuffer()
+	{
+
+	}
 }

@@ -1,5 +1,5 @@
 /****************************************************************************/
-/*  matrix3.h                                                               */
+/*  main.h                                                                  */
 /****************************************************************************/
 /*                          This file is a part of:                         */
 /*                              STUPEFY ENGINE                              */
@@ -23,53 +23,19 @@
 
 #pragma once
 
-#include "core/math/math_functions.h"
-#include "core/math/vector3.h"
+#include "core/core_common.h"
+#include "editor/logger/logger.h"
 
 namespace Stupefy
 {
-	class STUPEFY_API matrix3
+	class STUPEFY_API Application
 	{
 	public:
+		Application();
+		virtual ~Application();
 
-		F32 matrixData[9] = { 0.0 };
-
-		matrix3();
-		~matrix3();
-
-		matrix3(F32 m0, F32 m3, F32 m6, F32 m1, F32 m4, F32 m7, F32 m2, F32 m5, F32 m8);
-		matrix3& operator=(const matrix3& val);
-
-		const matrix3 operator+(const matrix3& m);
-		const matrix3 operator*(const F32 s);
-		const matrix3 operator*(const matrix3& m);
-
-		const vector3 operator*(const vector3& v);
-		
-		void operator+=(const matrix3& m);
-		void operator*=(const F32 s);
-		void operator*=(const matrix3& m);
-
-		const vector3 transformVectorByMatrix(const vector3& v);
-
-		void setIdentityMatrix();
-		void setInverseOfMatrix(const matrix3& m);
-
-		const matrix3 getInverse();
-		void invertMatrix();
-		const F32 getDeterminent();
-		void setTransposeMatrix(const matrix3& m);
-		const matrix3 getTranspose(const matrix3& m);
-		void invertAndTranspose();
-
-		void matrixRotateXByAngle(F32 uAngle);
-		void matrixRotateYByAngle(F32 uAngle);
-		void matrixRotateZByAngle(F32 uAngle);
-
-		void matrixTransformXByAngle(F32 uAngle);
-		void matrixTransformYByAngle(F32 uAngle);
-		void matrixTransformZByAngle(F32 uAngle);
-
-		void show();
+		void Run();
 	};
+
+	Application* CreateApplication();
 }

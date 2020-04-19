@@ -1,5 +1,5 @@
 /****************************************************************************/
-/*  matrix3.h                                                               */
+/*  Stupefy.h                                                             */
 /****************************************************************************/
 /*                          This file is a part of:                         */
 /*                              STUPEFY ENGINE                              */
@@ -23,53 +23,30 @@
 
 #pragma once
 
+/*==========  CORE DIRECTORY  ==========*/
+#include "core/core_common.h"
+#include "core/defines.h"
+#include "core/typedefs.h"
+
+//MATH DIRECTORY
 #include "core/math/math_functions.h"
+#include "core/math/matrix3.h"
+#include "core/math/quaternions.h"
+#include "core/math/vector2.h"
 #include "core/math/vector3.h"
 
-namespace Stupefy
-{
-	class STUPEFY_API matrix3
-	{
-	public:
+/*==========  EDITOR DIRECTORY  ==========*/
+//LOGGER DIRECTORY
+#include "editor/logger/logger.h"
 
-		F32 matrixData[9] = { 0.0 };
+/*==========  MAIN DIRECTORY  ==========*/
+#include "main/main_app.h"
+#include "main/entrypoint.h"
 
-		matrix3();
-		~matrix3();
-
-		matrix3(F32 m0, F32 m3, F32 m6, F32 m1, F32 m4, F32 m7, F32 m2, F32 m5, F32 m8);
-		matrix3& operator=(const matrix3& val);
-
-		const matrix3 operator+(const matrix3& m);
-		const matrix3 operator*(const F32 s);
-		const matrix3 operator*(const matrix3& m);
-
-		const vector3 operator*(const vector3& v);
-		
-		void operator+=(const matrix3& m);
-		void operator*=(const F32 s);
-		void operator*=(const matrix3& m);
-
-		const vector3 transformVectorByMatrix(const vector3& v);
-
-		void setIdentityMatrix();
-		void setInverseOfMatrix(const matrix3& m);
-
-		const matrix3 getInverse();
-		void invertMatrix();
-		const F32 getDeterminent();
-		void setTransposeMatrix(const matrix3& m);
-		const matrix3 getTranspose(const matrix3& m);
-		void invertAndTranspose();
-
-		void matrixRotateXByAngle(F32 uAngle);
-		void matrixRotateYByAngle(F32 uAngle);
-		void matrixRotateZByAngle(F32 uAngle);
-
-		void matrixTransformXByAngle(F32 uAngle);
-		void matrixTransformYByAngle(F32 uAngle);
-		void matrixTransformZByAngle(F32 uAngle);
-
-		void show();
-	};
-}
+/*==========  SYSTEMS DIRECTORY  ==========*/
+//RENDERER DIRECTORY
+#include "systems/renderer/indexbuffer.h"
+#include "systems/renderer/renderer.h"
+#include "systems/renderer/shader.h"
+#include "systems/renderer/textures.h"
+#include "systems/renderer/vertexarray.h"

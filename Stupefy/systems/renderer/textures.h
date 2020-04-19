@@ -23,9 +23,11 @@
 
 #pragma once
 
+#include "core/core_common.h"
+
 namespace Renderer
 {
-	class textures
+	class STUPEFY_API Textures
 	{
 
 	};
