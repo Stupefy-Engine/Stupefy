@@ -29,7 +29,7 @@ namespace Stupefy
 
     vector3::~vector3(){}   
                                                    
-    vector3::vector3(F32 uX, F32 uY, F32 uZ):x(uX),y(uY),z(uZ){}   
+    vector3::vector3(float uX, float uY, float uZ):x(uX),y(uY),z(uZ){}   
       
 
     vector3::vector3(const vector3& v):x(v.x),y(v.y),z(v.z){}   
@@ -52,12 +52,12 @@ namespace Stupefy
         return vector3(x - v.x, y - v.y, z - v.z);
     }   
              
-    const vector3 vector3::operator*(const F32 s)
+    const vector3 vector3::operator*(const float s)
     {
         return vector3(x * s, y * s, z * s);
     }   
                     
-    const vector3 vector3::operator/(const F32 s)    
+    const vector3 vector3::operator/(const float s)    
     {
         return vector3(x / s, y / s, z / s);
     }   
@@ -76,33 +76,33 @@ namespace Stupefy
         z -= v.z;
     }   
                           
-    void vector3::operator *=(const F32 s)       
+    void vector3::operator *=(const float s)       
     {
         x *= s;
         y *= s;
         z *= s;
     }   
                          
-    void vector3::operator /=(const F32 s)
+    void vector3::operator /=(const float s)
     {
         x /= s;
         y /= s;
         z /= s;
     }
 
-    const F32 vector3::operator *(const vector3& v)
+    const float vector3::operator *(const vector3& v)
     {
         return x * v.x + y * v.y + z * v.z;
     }
 
-    const F32 vector3::dot(const vector3& v)
+    const float vector3::dot(const vector3& v)
     {
         return x * v.x + y * v.y + z * v.z;
     }
     
-    F32 vector3::angle(const vector3& v)
+    float vector3::angle(const vector3& v)
     {
-        F32 theta;
+        float theta;
         vector3 u = v;
         vector3 m = *this;
         theta = dot(u) / (m.magnitude() * u.magnitude());
@@ -140,10 +140,10 @@ namespace Stupefy
     
     void vector3::normalize()
     {
-        F32 mag = std::sqrt(x * x + y * y + z * z);
+        float mag = std::sqrt(x * x + y * y + z * z);
         if (mag > 0.0f)
         {
-            F32 oneOverMag = 1.0f / mag;
+            float oneOverMag = 1.0f / mag;
 
             x = x * oneOverMag;
             y = y * oneOverMag;
@@ -165,19 +165,19 @@ namespace Stupefy
         z = std::abs(z);
     }
     
-    F32 vector3::magnitude()
+    float vector3::magnitude()
     {
-        F32 magnitude = std::sqrt(x * x + y * y + z * z);
+        float magnitude = std::sqrt(x * x + y * y + z * z);
         return magnitude;
     }
     
-    F32 vector3::magnitudeSquare()
+    float vector3::magnitudeSquare()
     {
-        F32 magnitude = x * x + y * y + z * z;
+        float magnitude = x * x + y * y + z * z;
         return magnitude;
     }
     /*
-    vector3 vector3::rotateVectorAboutAngleAndAxis(F32 uAngle, vector3& uAxis)
+    vector3 vector3::rotateVectorAboutAngleAndAxis(float uAngle, vector3& uAxis)
     {
         //TODO
     }

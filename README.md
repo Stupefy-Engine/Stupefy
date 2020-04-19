@@ -24,7 +24,7 @@ Visual Studio 2017 or 2019 is recommended, Stupefy is currently for Windows only
 
 You can clone the repository to a local destination using git:
 
-`git clone --recursive https://github.com/Stupefy-Engine/Stupefy`
+`git clone --recursive https://github.com/Stupefy-Engine/Stupefy.git`
 
 Make sure that you do a `--recursive` clone to fetch all of the submodules!
 

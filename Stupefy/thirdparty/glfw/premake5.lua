@@ -1,10 +1,11 @@
 project "GLFW"
 	kind "StaticLib"
 	language "C"
+	staticruntime "on"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
-
+	
 	files
 	{
 		"include/GLFW/glfw3.h",
@@ -17,34 +18,33 @@ project "GLFW"
 		"src/vulkan.c",
 		"src/window.c"
 	}
-	filter "system:linux"
-		pic "On"
 
-		systemversion "latest"
-		staticruntime "On"
+--	filter "system:linux"
+--		pic "On"
 
-		files
-		{
-			"src/x11_init.c",
-			"src/x11_monitor.c",
-			"src/x11_window.c",
-			"src/xkb_unicode.c",
-			"src/posix_time.c",
-			"src/posix_thread.c",
-			"src/glx_context.c",
-			"src/egl_context.c",
-			"src/osmesa_context.c",
-			"src/linux_joystick.c"
-		}
+--		systemversion "latest"
 
-		defines
-		{
-			"_GLFW_X11"
-		}
+--		files
+--		{
+--			"src/x11_init.c",
+--			"src/x11_monitor.c",
+--			"src/x11_window.c",
+--			"src/xkb_unicode.c",
+--			"src/posix_time.c",
+--			"src/posix_thread.c",
+--			"src/glx_context.c",
+--			"src/egl_context.c",
+--			"src/osmesa_context.c",
+--			"src/linux_joystick.c"
+--		}
+
+--		defines
+--		{
+--			"_GLFW_X11"
+--		}
 
 	filter "system:windows"
 		systemversion "latest"
-		staticruntime "On"
 
 		files
 		{

@@ -1,5 +1,5 @@
 workspace "Stupefy"
-    architecture "x64"
+    architecture "x86_64"
     startproject "Sandbox"
 
     configurations
@@ -8,6 +8,11 @@ workspace "Stupefy"
         "Release",
         "Dist"
     }
+
+    flags
+	{
+		"MultiProcessorCompile"
+	}
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
@@ -25,7 +30,7 @@ group "thirdparty"
     
 project "Stupefy"
     location "Stupefy"
-    kind "SharedLib"
+    kind "StaticLib"
     language "C++"
     cppdialect "C++17"
     staticruntime "on"
@@ -66,28 +71,24 @@ project "Stupefy"
         defines
         {
             "SF_PLATFORM_WINDOWS",
-            "SF_BUILD_DLL"
-        }
-
-        postbuildcommands
-        {
-            ("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
+            "SF_BUILD_DLL",
+            "GLFW_INCLUDE_NONE"
         }
         
 	filter "configurations: Debug"
         defines "SF_DEBUG"
         runtime "Debug"
-        symbols "On"
+        symbols "on"
         
 	filter "configurations: Release"
         defines "SF_RELEASE"
         runtime "Release"
-        optimize "On"
+        optimize "on"
         
 	filter "configurations: Dist"
         defines "SF_DIST"
         runtime "Release"
-        optimize "On"
+        optimize "on"
 
 
 project "Sandbox"
@@ -95,7 +96,7 @@ project "Sandbox"
     kind "ConsoleApp"
     language "C++"
     cppdialect "C++17"
-    staticruntime "On"
+    staticruntime "on"
     
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -108,6 +109,9 @@ project "Sandbox"
     
     includedirs
     {
+        "%{IncludeDir.GLFW}",
+        "%{IncludeDir.Glad}",
+        "%{IncludeDir.vulkan}",
         "Stupefy/thirdparty",
         "Stupefy"
     }
@@ -127,7 +131,8 @@ project "Sandbox"
     
 	filter "configurations:Debug"
 		defines "SF_DEBUG"
-		runtime "Debug"
+        runtime "Debug"
+        buildoptions "/MT"
 		symbols "on"
 
 	filter "configurations:Release"

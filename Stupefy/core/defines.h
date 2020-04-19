@@ -39,11 +39,15 @@
 #ifdef SF_PLATFORM_WINDOWS
 #define FORCEINLINE __forceinline
 #define FORCENOINLINE __declspec(noinline)
+#if SF_DYNAMIC_LINK
     #ifdef SF_BUILD_DLL
         #define STUPEFY_API __declspec(dllexport)
     #else
         #define STUPEFY_API __declspec(dllimport)
     #endif
+#else
+    #define STUPEFY_API 
+#endif
 #else
     #error Stupefy supports Windows only!
 #endif

@@ -31,36 +31,36 @@ namespace Stupefy
     class STUPEFY_API vector2
     {
 	public:
-		F32 x, y;
+		float x, y;
 
 		vector2();
 		~vector2();
 
-		vector2(F32 uX, F32 uY);
+		vector2(float uX, float uY);
 		vector2(const vector2& v);
 
 		vector2& operator =(const vector2& v);
 
 		const vector2 operator+(const vector2& v);
 		const vector2 operator-(const vector2& v);
-		const vector2 operator*(const F32 s);
-		const vector2 operator/(const F32 s);
+		const vector2 operator*(const float s);
+		const vector2 operator/(const float s);
 
 		void operator+=(const vector2& v);
 		void operator-=(const vector2& v);
-		void operator*=(const F32 s);
-		void operator/=(const F32 s);
+		void operator*=(const float s);
+		void operator/=(const float s);
 
-		const F32 operator*(const vector2& v);
-		const F32 dot(const vector2& v);
+		const float operator*(const vector2& v);
+		const float dot(const vector2& v);
 
 		void conjugate();
 		void normalize();
 		void zero();
 		void absolute();
 
-		F32 magnitude();
-		F32 magnitudeSquare();
+		float magnitude();
+		float magnitudeSquare();
 
 		void show();
     };

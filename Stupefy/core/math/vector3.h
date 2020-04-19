@@ -31,28 +31,28 @@ namespace Stupefy
 	class STUPEFY_API vector3
 	{
 	public:
-		F32 x, y, z;
+		float x, y, z;
 
 		vector3();
 		~vector3();
-		vector3(F32 uX, F32 uY, F32 uZ);
+		vector3(float uX, float uY, float uZ);
 
 		vector3(const vector3& v);
 		vector3& operator=(const vector3& v);
 
 		const vector3 operator+(const vector3& v);
 		const vector3 operator-(const vector3& v);
-		const vector3 operator*(const F32 s);
-		const vector3 operator/(const F32 s);
+		const vector3 operator*(const float s);
+		const vector3 operator/(const float s);
 
 		void operator+=(const vector3& v);
 		void operator-=(const vector3& v);
-		void operator*=(const F32 s);
-		void operator/=(const F32 s);
+		void operator*=(const float s);
+		void operator/=(const float s);
 
-		const F32 operator*(const vector3& v);
-		const F32 dot(const vector3& v);
-		F32 angle(const vector3& v);
+		const float operator*(const vector3& v);
+		const float dot(const vector3& v);
+		float angle(const vector3& v);
 
 		const vector3 operator%(const vector3& v);
 		void operator%=(const vector3& v);
@@ -63,10 +63,10 @@ namespace Stupefy
 		void zero();
 		void absolute();
 
-		F32 magnitude();
-		F32 magnitudeSquare();
+		float magnitude();
+		float magnitudeSquare();
 
-		vector3 rotateVectorAboutAngleAndAxis(F32 uAngle, vector3& uAxis);
+		vector3 rotateVectorAboutAngleAndAxis(float uAngle, vector3& uAxis);
 
 		void show();
 		void negate();
