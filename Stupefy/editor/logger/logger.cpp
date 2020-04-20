@@ -26,21 +26,44 @@
 
 namespace Stupefy
 {
-	const std::string currenttime()
+	const std::string currenttime(std::string s)
 	{
 		time_t now = time(0);
 		tm* ltm = localtime(&now);
 		struct tm tstruct;
 		char buf[80];
 		tstruct = *localtime(&now);
-		strftime(buf, sizeof(buf), "[%Y-%m-%d][%X] ", &tstruct);
-		return buf;
+		if (s == "now")
+		{
+			strftime(buf, sizeof(buf), "[%Y-%m-%d][%X] ", &tstruct);
+		}
+		else if (s == "date")
+		{
+			strftime(buf, sizeof(buf), "[%Y-%m-%d] ", &tstruct);
+		}
+		return std::string(buf);
 	}
+
+	/*inline void fileWriter()
+	{
+		std::string filepath = "C:\\Users\\HARSHB\\Documents\\Stupefy Log\\Log_" + currenttime("date") + ".txt";
+		std::string now = currenttime("now");
+		std::ofstream ofs(filepath.c_str(), std::ios_base::out | std::ios_base::app);
+		ofs << now << "\t";
+		ofs.close();
+	}*/
 
 	static void writeLog(const char* prepend, const char* message, va_list args)
 	{
-		std::cout << currenttime();
+		std::cout << currenttime("now");
 		vprintf((std::string(prepend) + message + "\n").c_str(), args);
+
+		std::string filepath = "..\\Logs\\Log--" + currenttime("date") + ".txt";
+		std::string now = currenttime("now");
+		std::ofstream ofs(filepath.c_str(), std::ios_base::out | std::ios_base::app);
+		
+		ofs << now << "\t" << (std::string(prepend)) << message <<"\n";
+		ofs.close();
 	}
 
 	void Stupefy::Logger::Trace(const char* message, ...)

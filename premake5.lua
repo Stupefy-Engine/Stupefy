@@ -16,6 +16,8 @@ workspace "Stupefy"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+os.mkdir("Stupefy/../Logs")
+
 IncludeDir = {}
 IncludeDir["GLFW"] = "Stupefy/thirdparty/GLFW/include"
 IncludeDir["Glad"] = "Stupefy/thirdparty/Glad/include"

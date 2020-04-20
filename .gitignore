@@ -11,6 +11,7 @@ builds/
 
 bin/
 bin-int/
+Logs/
 
 #Construction Systems
 SConstruct
