@@ -1,5 +1,5 @@
 /****************************************************************************/
-/*  entrypoint.h                                                            */
+/*  colorboy.h                                                              */
 /****************************************************************************/
 /*                          This file is a part of:                         */
 /*                              STUPEFY ENGINE                              */
@@ -23,20 +23,69 @@
 
 #pragma once
 
-#ifdef SF_PLATFORM_WINDOWS
+#include "core/core_common.h"
 
-extern Stupefy::Application* Stupefy::CreateApplication();
-
-int main(int argc,char* argv)
+namespace ColorBoy
 {
-	Stupefy::Logger::Log("Initializing Stupefy Engine: v%d.0", 1);
-	Stupefy::Logger::Trace("Checking Trace");
-	Stupefy::Logger::Warn("Checking Warn");
-	Stupefy::Logger::Error("Checking Error");
-	//Stupefy::Logger::Fatal("Checking Fatal");
-	auto app = Stupefy::CreateApplication();
-	app->Run();
-	delete app;
-}
+	enum Colors
+	{
+		RESET_COLOR = 0,
+		BOLD = 1,
+		DARK = 2,
+		UNDERLINE = 4,
+		BLINK = 5,
+		REVERSE = 7,
+		CONCEALED = 8,
 
-#endif
+		BLACK_TXT = 30,
+		RED_TXT = 31,
+		GREEN_TXT = 32,
+		YELLOW_TXT = 33,
+		BLUE_TXT = 34,
+		MAGENTA_TXT = 35,
+		CYAN_TXT = 36,
+		WHITE_TXT = 37,
+
+		BLACK_BKG = 40,
+		RED_BKG = 41,
+		GREEN_BKG = 42,
+		YELLOW_BKG = 43,
+		BLUE_BKG = 44,
+		MAGENTA_BKG = 45,
+		CYAN_BKG = 46,
+		WHITE_BKG = 47
+	};
+
+	void setupConsole(void);
+	void restoreConsole(void);
+
+	static inline void setTextColor(int code)
+	{
+		printf("\x1b[%dm", code);
+	}
+
+	static inline void setTextColorBright(int code)
+	{
+		printf("\x1b[%d;1m", code);
+	}
+
+	static inline void setBackgroundColor(int code)
+	{
+		printf("\x1b[%dm", code);
+	}
+
+	static inline void setBackgroundColorBright(int code)
+	{
+		printf("\x1b[%d;1m", code);
+	}
+
+	static inline void setStyle(int code)
+	{
+		printf("\x1b[%dm", code);
+	}
+
+	static inline void setColorAndStyle(int colcode, int stylecode)
+	{
+		printf("\x1b[%dm\x1b[%dm", colcode, stylecode);
+	}
+}

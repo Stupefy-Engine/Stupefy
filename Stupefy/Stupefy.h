@@ -1,5 +1,5 @@
 /****************************************************************************/
-/*  Stupefy.h                                                             */
+/*  Stupefy.h                                                               */
 /****************************************************************************/
 /*                          This file is a part of:                         */
 /*                              STUPEFY ENGINE                              */
@@ -38,6 +38,7 @@
 /*==========  EDITOR DIRECTORY  ==========*/
 //LOGGER DIRECTORY
 #include "editor/logger/logger.h"
+#include "editor/logger/colorboy.h"
 
 /*==========  MAIN DIRECTORY  ==========*/
 #include "main/main_app.h"

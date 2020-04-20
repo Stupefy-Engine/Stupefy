@@ -25,16 +25,25 @@
 
 #if _WIN32 || _WIN64
 	#define PLATFORM_WINDOWS
+    #define COLORBOY_OS_WINDOWS
 #else
 #if __linux__
 	#define PLATFORM_LINUX
+    #define COLORBOY_OS_LINUX
 #elif __APPLE__
 	#define PLATFORM_MAC
+    #define COLORBOY_OS_MACOS
 #else
 	#error "Unable to determine platform!"
 #endif
 #endif
 
+#if defined(COLORBOY_OS_WINDOWS)  
+    #include <io.h>
+    #include <windows.h>
+#elif defined(COLORBOY_OS_MACOS) || defined(COLORBOY_OS_LINUX)
+    #include <unistd.h>
+#endif
 
 #ifdef SF_PLATFORM_WINDOWS
 #define FORCEINLINE __forceinline
