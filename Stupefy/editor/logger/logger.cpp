@@ -53,27 +53,34 @@ namespace Stupefy
 		ofs.close();
 	}*/
 
-	static void writeLog(const char* prepend, const char* message, va_list args)
+	static void writeLogOnConsole(const char* prepend, const char* message, va_list &args)
 	{
+		// Log to console
 		std::cout << currenttime("now");
 		vprintf((std::string(prepend) + message + "\n").c_str(), args);
 
-		std::string filepath = "..\\Logs\\Log--" + currenttime("date") + ".txt";
-		std::string now = currenttime("now");
-		std::ofstream ofs(filepath.c_str(), std::ios_base::out | std::ios_base::app);
-		
-		ofs << now << "\t" << (std::string(prepend)) << message <<"\n";
-		ofs.close();
 	}
 
 	void Stupefy::Logger::Trace(const char* message, ...)
 	{
 		ColorBoy::setupConsole();
 		ColorBoy::setTextColor(ColorBoy::WHITE_TXT);
+
+		// Create buffer
+		int ret;
+		char log_buffer[256];
 		va_list args;
 		va_start(args, message);
-		writeLog("[TRACE]: ", message, args);
+		writeLogOnConsole("[TRACE]: ", message, args);
+		ret = vsprintf(log_buffer, message, args);
 		va_end(args);
+
+		// Writting to log file
+		std::string filepath = "..\\Logs\\Log--" + currenttime("date") + ".txt";
+		std::ofstream ofs(filepath.c_str(), std::ios_base::out | std::ios_base::app);
+		ofs << currenttime("now") << "\t" << "[TRACE]: " << log_buffer << "\n";
+		ofs.close();
+
 		ColorBoy::restoreConsole();
 	}
 
@@ -81,10 +88,22 @@ namespace Stupefy
 	{
 		ColorBoy::setupConsole();
 		ColorBoy::setTextColor(ColorBoy::GREEN_TXT);
+		
+		// Create buffer
+		int ret;
+		char log_buffer[256];
 		va_list args;
 		va_start(args, message);
-		writeLog("[LOG]: ", message, args);
+		writeLogOnConsole("[LOG]: ", message, args);
+		ret = vsprintf(log_buffer, message, args);
 		va_end(args);
+
+		// Writting to log file
+		std::string filepath = "..\\Logs\\Log--" + currenttime("date") + ".txt";
+		std::ofstream ofs(filepath.c_str(), std::ios_base::out | std::ios_base::app);
+		ofs << currenttime("now") << "\t" << "[LOG]: " << log_buffer <<"\n";
+		ofs.close();
+
 		ColorBoy::restoreConsole();
 	}
 
@@ -92,10 +111,22 @@ namespace Stupefy
 	{
 		ColorBoy::setupConsole();
 		ColorBoy::setColorAndStyle(ColorBoy::YELLOW_TXT, ColorBoy::BOLD);
+		
+		// Create buffer
+		int ret;
+		char log_buffer[256];
 		va_list args;
 		va_start(args, message);
-		writeLog("[WARN]: ", message, args);
+		writeLogOnConsole("[WARN]: ", message, args);
+		ret = vsprintf(log_buffer, message, args);
 		va_end(args);
+
+		// Writting to log file
+		std::string filepath = "..\\Logs\\Log--" + currenttime("date") + ".txt";
+		std::ofstream ofs(filepath.c_str(), std::ios_base::out | std::ios_base::app);
+		ofs << currenttime("now") << "\t" << "[WARN]: " << log_buffer << "\n";
+		ofs.close();
+
 		ColorBoy::restoreConsole();
 	}
 
@@ -105,10 +136,22 @@ namespace Stupefy
 		//ColorBoy::setTextColor(RED_TXT);
 		//ColorBoy::setStyle(BOLD);
 		ColorBoy::setColorAndStyle(ColorBoy::RED_TXT, ColorBoy::BOLD);
+		
+		// Create buffer
+		int ret;
+		char log_buffer[256];
 		va_list args;
 		va_start(args, message);
-		writeLog("[ERROR]: ", message, args);
+		writeLogOnConsole("[ERROR]: ", message, args);
+		ret = vsprintf(log_buffer, message, args);
 		va_end(args);
+
+		// Writting to log file
+		std::string filepath = "..\\Logs\\Log--" + currenttime("date") + ".txt";
+		std::ofstream ofs(filepath.c_str(), std::ios_base::out | std::ios_base::app);
+		ofs << currenttime("now") << "\t" << "[ERROR]: " << log_buffer << "\n";
+		ofs.close();
+		
 		ColorBoy::restoreConsole();
 	}
 
@@ -117,10 +160,22 @@ namespace Stupefy
 		ColorBoy::setupConsole();
 		ColorBoy::setBackgroundColor(ColorBoy::RED_BKG);
 		ColorBoy::setTextColor(ColorBoy::WHITE_TXT);
+		
+		// Create buffer
+		int ret;
+		char log_buffer[256];
 		va_list args;
 		va_start(args, message);
-		writeLog("[FATAL]: ", message, args);
+		writeLogOnConsole("[FATAL]: ", message, args);
+		ret = vsprintf(log_buffer, message, args);
 		va_end(args);
+
+		// Writting to log file
+		std::string filepath = "..\\Logs\\Log--" + currenttime("date") + ".txt";
+		std::ofstream ofs(filepath.c_str(), std::ios_base::out | std::ios_base::app);
+		ofs << currenttime("now") << "\t" << "[FATAL]: " << log_buffer << "\n";
+		ofs.close();
+		
 		ColorBoy::restoreConsole();
 
 		ASSERT(false);
