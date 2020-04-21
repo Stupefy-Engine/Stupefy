@@ -31,9 +31,10 @@ int main(int argc,char* argv)
 {
 	Stupefy::Logger::Log("Initializing Stupefy Engine: v%d.0", 1);
 	Stupefy::Logger::Trace("Checking Trace");
+	Stupefy::Logger::Debug("Checking Debug");
 	Stupefy::Logger::Warn("Checking Warn");
 	Stupefy::Logger::Error("Checking Error");
-	//Stupefy::Logger::Fatal("Checking Fatal");
+	Stupefy::Logger::Fatal("Checking Fatal");
 	auto app = Stupefy::CreateApplication();
 	app->Run();
 	delete app;

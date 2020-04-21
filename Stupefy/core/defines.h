@@ -23,6 +23,8 @@
 
 #pragma once
 
+#include "editor/logger/colorboy.h"
+
 #if _WIN32 || _WIN64
 	#define PLATFORM_WINDOWS
     #define COLORBOY_OS_WINDOWS
@@ -115,7 +117,10 @@
 
 FORCEINLINE void reportAssertionFailure(const char* expression, const char* message, const char* file, int line)
 {
-	std::cerr << "Assertion Failure: " << expression << ", message: " << "', in file: " << file << ", line: " << line << "\n";
+    ColorBoy::setupConsole();
+    ColorBoy::setColorAndStyle(ColorBoy::BLUE_TXT, ColorBoy::WHITE_BKG);
+	std::cerr << "Assertion Failure: " << expression << " message: ' " << message<<" ' in file: " << file << " at line: " << line << "\n";
+    ColorBoy::restoreConsole();
 }
 
 #else
