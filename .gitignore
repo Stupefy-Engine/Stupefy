@@ -13,5 +13,5 @@ bin/
 bin-int/
 Logs/
 
-#Construction Systems
-SConstruct
+#CMake Files
+build/

@@ -48,8 +48,8 @@
 #endif
 
 #ifdef SF_PLATFORM_WINDOWS
-#define FORCEINLINE __forceinline
-#define FORCENOINLINE __declspec(noinline)
+    #define FORCEINLINE __forceinline
+    #define FORCENOINLINE __declspec(noinline)
 #if SF_DYNAMIC_LINK
     #ifdef SF_BUILD_DLL
         #define STUPEFY_API __declspec(dllexport)
@@ -69,10 +69,10 @@
 #include <iostream>
 
 #if _MSC_VER
-#include <intrin.h>
-#define debugBreak() __debugbreak();
+    #include <intrin.h>
+    #define debugBreak() __debugbreak();
 #else
-#define debugBreak() __asm { int 3 }
+    #define debugBreak() __asm { int 3 }
 #endif
 
 #define ASSERT(expr) \
@@ -118,7 +118,9 @@
 FORCEINLINE void reportAssertionFailure(const char* expression, const char* message, const char* file, int line)
 {
     ColorBoy::setupConsole();
-    ColorBoy::setColorAndStyle(ColorBoy::BLUE_TXT, ColorBoy::WHITE_BKG);
+    ColorBoy::setBackgroundColor(ColorBoy::WHITE_BKG);
+    ColorBoy::setTextColorBright(ColorBoy::BLUE_TXT);
+    ColorBoy::setStyle(ColorBoy::BOLD);
 	std::cerr << "Assertion Failure: " << expression << " message: ' " << message<<" ' in file: " << file << " at line: " << line << "\n";
     ColorBoy::restoreConsole();
 }

@@ -33,6 +33,12 @@ Make sure that you do a `--recursive` clone to fetch all of the submodules!
 Stupefy Engine can be built from its source by running the Win-Gen.bat from scripts.
 The default building is for Visual Studio 2019.
 
+### Upcoming Features
+
+- Cmake build system
+- Support for Mac OS and Linux
+- Native rendering API support (Vulkan)
+
 
 [![Travis Build Status](https://travis-ci.org/Stupefy-Engine/Stupefy.svg?branch=master)](https://travis-ci.org/Stupefy-Engine/Stupefy)
 
