@@ -1,3 +1,5 @@
+# Main CMakeLists.txt
+
 target_sources(Stupefy 
     PRIVATE 
         ${CMAKE_CURRENT_LIST_DIR}/entrypoint.h

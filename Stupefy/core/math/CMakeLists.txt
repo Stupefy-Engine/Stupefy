@@ -1,3 +1,5 @@
+# Math CMakeLists.txt
+
 target_sources(Stupefy
     PRIVATE 
         ${CMAKE_CURRENT_LIST_DIR}/math_functions.h

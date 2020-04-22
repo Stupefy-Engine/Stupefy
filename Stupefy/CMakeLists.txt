@@ -1,3 +1,5 @@
+# Stupefy CMakeLists.txt
+
 add_library(Stupefy STATIC "")
 
     add_subdirectory(core)

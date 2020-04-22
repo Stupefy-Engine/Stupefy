@@ -1,3 +1,5 @@
+# Core CMakeLists.txt
+
 target_sources(Stupefy 
     PUBLIC 
         ${CMAKE_CURRENT_LIST_DIR}/core_common.h

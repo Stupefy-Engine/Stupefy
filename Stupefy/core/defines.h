@@ -26,17 +26,17 @@
 #include "editor/logger/colorboy.h"
 
 #if _WIN32 || _WIN64
-	#define PLATFORM_WINDOWS
+    #define PLATFORM_WINDOWS
     #define COLORBOY_OS_WINDOWS
 #else
 #if __linux__
-	#define PLATFORM_LINUX
+    #define PLATFORM_LINUX
     #define COLORBOY_OS_LINUX
 #elif __APPLE__
-	#define PLATFORM_MAC
+    #define PLATFORM_MAC
     #define COLORBOY_OS_MACOS
 #else
-	#error "Unable to determine platform!"
+    #error "Unable to determine platform!"
 #endif
 #endif
 
@@ -50,30 +50,35 @@
 #ifdef SF_PLATFORM_WINDOWS
     #define FORCENOINLINE __declspec(noinline)
     #if defined(__clang__)
+        #define FORCEINGINLINE __inline__ __attribute__((__always_inline__))
     #elif defined(__GNU__) || defined(__GNUG__)
         #define FORCEINGINLINE __inline__ __attribute__((__always_inline__))
-    #elif defined(_MSC_VER)
-        #define FORCEINGINLINE __forceinline
     #endif
 #if SF_DYNAMIC_LINK
     #ifdef SF_BUILD_DLL
-        #define STUPEFY_API __declspec(dllexport)
-    #else
-        #define STUPEFY_API __declspec(dllimport)
-    #endif
+    #define STUPEFY_API __declspec(dllexport)
+#else
+    #define STUPEFY_API __declspec(dllimport)
+#endif
 #else
     #define STUPEFY_API 
 #endif
 #else
-    #error Stupefy supports Windows only!
+    #define FORCENOINLINE __declspec(noinline)
+    #if defined(__clang__)
+        #define FORCEINGINLINE __inline__ __attribute__((__always_inline__))
+    #elif defined(__GNU__) || defined(__GNUG__)
+        #define FORCEINGINLINE __inline__ __attribute__((__always_inline__))
+    #endif
 #endif
 
 
 #define ASSERTIONS_ENABLED
 #ifdef ASSERTIONS_ENABLED
-#include <iostream>
+    #include <iostream>
 
 #if _MSC_VER
+    #define FORCEINGINLINE __forceinline
     #include <intrin.h>
     #define debugBreak() __debugbreak();
 #else
@@ -122,12 +127,12 @@
 
 FORCEINGINLINE void reportAssertionFailure(const char* expression, const char* message, const char* file, int line)
 {
-    ColorBoy::setupConsole();
-    ColorBoy::setBackgroundColor(ColorBoy::WHITE_BKG);
-    ColorBoy::setTextColorBright(ColorBoy::BLUE_TXT);
-    ColorBoy::setStyle(ColorBoy::BOLD);
-	std::cerr << "Assertion Failure: " << expression << " message: ' " << message<<" ' in file: " << file << " at line: " << line << "\n";
-    ColorBoy::restoreConsole();
+	ColorBoy::setupConsole();
+	ColorBoy::setBackgroundColor(ColorBoy::WHITE_BKG);
+	ColorBoy::setTextColorBright(ColorBoy::BLUE_TXT);
+	ColorBoy::setStyle(ColorBoy::BOLD);
+	std::cerr << "Assertion Failure: " << expression << " message: ' " << message << " ' in file: " << file << " at line: " << line << "\n";
+	ColorBoy::restoreConsole();
 }
 
 #else
