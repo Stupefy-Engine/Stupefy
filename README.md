@@ -34,6 +34,20 @@ Make sure that you do a `--recursive` clone to fetch all of the submodules!
 
     - Stupefy Engine can be built from its source by running the Win-Gen.bat from scripts.
     - The default building is for Visual Studio 2019.
+    
+    - IF YOU WANT TO WORK USING VS CODE IDE ON WINDOWS THEN FOLLOW THESE STEPS
+    
+    - To build on Linux platform you will need:-
+    - VS Code (C++ Extension Installed)
+    - MinGW (Latest)
+    - Cmake (Latest)
+
+    - After cloning the the Stupefy Engine from git repository:-
+    - Enter the root directory
+    - Open terminal and type `mkdir build && cd build`
+    - Next type `cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Debug ..`
+    - Then type `cmake --build .`
+    - Then go to build/Sandbox and run Sandbox
 
 
 - Building On Linux
@@ -45,7 +59,8 @@ Make sure that you do a `--recursive` clone to fetch all of the submodules!
     - After cloning the the Stupefy Engine from git repository:-
     - Enter the root directory
     - Open terminal and type `mkdir build && cd build`
-    - Next type `cmake -G "Unix Makefiles -DCMAKE_BUILD_TYPE=Debug ..`
+    - Next type `cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug ..`
+    - Then type `cmake --build .`
     - Then go to build/Sandbox and run Sandbox
 
 
