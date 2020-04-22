@@ -23,10 +23,10 @@
 
 #pragma once
 
-#include <glad/glad.h>
+/*#include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <vulkan/vulkan.h>
-
+*/
 #include "core/core_common.h"
 
 namespace Renderer

@@ -48,8 +48,13 @@
 #endif
 
 #ifdef SF_PLATFORM_WINDOWS
-    #define FORCEINLINE __forceinline
     #define FORCENOINLINE __declspec(noinline)
+    #if defined(__clang__)
+    #elif defined(__GNU__) || defined(__GNUG__)
+        #define FORCEINGINLINE __inline__ __attribute__((__always_inline__))
+    #elif defined(_MSC_VER)
+        #define FORCEINGINLINE __forceinline
+    #endif
 #if SF_DYNAMIC_LINK
     #ifdef SF_BUILD_DLL
         #define STUPEFY_API __declspec(dllexport)
@@ -72,7 +77,7 @@
     #include <intrin.h>
     #define debugBreak() __debugbreak();
 #else
-    #define debugBreak() __asm { int 3 }
+    #define debugBreak() __asm__  volatile("int $0x03");
 #endif
 
 #define ASSERT(expr) \
@@ -115,7 +120,7 @@
     #define ASSERT_DEBUG(expr)
 #endif
 
-FORCEINLINE void reportAssertionFailure(const char* expression, const char* message, const char* file, int line)
+FORCEINGINLINE void reportAssertionFailure(const char* expression, const char* message, const char* file, int line)
 {
     ColorBoy::setupConsole();
     ColorBoy::setBackgroundColor(ColorBoy::WHITE_BKG);
