@@ -51,3 +51,6 @@
 #include "systems/renderer/shader.h"
 #include "systems/renderer/textures.h"
 #include "systems/renderer/vertexarray.h"
+
+
+#include <QtCore\QDebug>
