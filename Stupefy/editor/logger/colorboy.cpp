@@ -21,15 +21,15 @@
 /****************************************************************************/
 
 
-#include "core/core_common.h"
-#include "editor/logger/colorboy.h"
+#include "Core/CoreCommon.h"
+#include "Editor/Logger/ColorBoy.h"
 
 namespace ColorBoy
 {
-	#ifdef _WIN32
-	#ifndef ENABLE_VIRTUAL_TERMINAL_PROCESSING
-		#define ENABLE_VIRTUAL_TERMINAL_PROCESSING 0x0004
-	#endif
+#ifdef _WIN32
+#ifndef ENABLE_VIRTUAL_TERMINAL_PROCESSING
+#define ENABLE_VIRTUAL_TERMINAL_PROCESSING 0x0004
+#endif
 
 	static HANDLE stdoutHandle;
 	static DWORD outModeINit;
@@ -67,12 +67,12 @@ namespace ColorBoy
 			exit(GetLastError());
 		}
 	}
-	#else
+#else
 	void setupConsole(void) {}
 
 	void restoreConsole(void)
 	{
 		std::cout << "\x1b[0m";
 	}
-	#endif
+#endif
 }

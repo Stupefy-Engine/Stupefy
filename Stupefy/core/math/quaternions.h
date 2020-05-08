@@ -23,10 +23,10 @@
 
 #pragma once
 
-#include "core/core_common.h"
-#include "core/math/math_functions.h"
-#include "core/math/vector3.h"
-#include "core/math/matrix3.h"
+#include "Core/CoreCommon.h"
+#include "Core/Math/MathFunctions.h"
+#include "Core/Math/Vector3.h"
+#include "Core/Math/Matrix3.h"
 
 namespace Stupefy
 {

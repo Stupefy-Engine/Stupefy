@@ -23,7 +23,7 @@
 
 #pragma once
 
-#include "core/core_common.h"
+#include "Core/CoreCommon.h"
 
 namespace ColorBoy
 {

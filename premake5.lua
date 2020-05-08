@@ -19,14 +19,14 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 os.mkdir("Stupefy/../Logs")
 
 IncludeDir = {}
-IncludeDir["GLFW"] = "Stupefy/thirdparty/GLFW/include"
-IncludeDir["Glad"] = "Stupefy/thirdparty/Glad/include"
-IncludeDir["vulkan"] = "Stupefy/thirdparty/vulkan/include"
+IncludeDir["GLFW"] = "Stupefy/Thirdparty/GLFW/include"
+IncludeDir["Glad"] = "Stupefy/Thirdparty/Glad/include"
+IncludeDir["vulkan"] = "Stupefy/Thirdparty/vulkan/include"
 
-group "thirdparty"
-    include "Stupefy/thirdparty/GLFW"
-    include "Stupefy/thirdparty/Glad"
-    include "Stupefy/thirdparty/vulkan"
+group "Dependencies"
+    include "Stupefy/Thirdparty/GLFW"
+    include "Stupefy/Thirdparty/Glad"
+    include "Stupefy/Thirdparty/vulkan"
 
     group ""
     
@@ -64,7 +64,7 @@ project "Stupefy"
         "GLFW",
         "Glad",
         "opengl32.lib",
-        "Stupefy/thirdparty/vulkan/Lib/vulkan-1.lib"
+        "Stupefy/Thirdparty/vulkan/Lib/vulkan-1.lib"
     }
 
     filter "system:windows"
@@ -114,7 +114,7 @@ project "Sandbox"
         "%{IncludeDir.GLFW}",
         "%{IncludeDir.Glad}",
         "%{IncludeDir.vulkan}",
-        "Stupefy/thirdparty",
+        "Stupefy/Thirdparty",
         "Stupefy"
     }
     

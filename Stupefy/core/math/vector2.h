@@ -23,13 +23,13 @@
 
 #pragma once
 
-#include "core/core_common.h"
-#include "core/math/math_functions.h"
+#include "Core/CoreCommon.h"
+#include "Core/Math/MathFunctions.h"
 
 namespace Stupefy
 {
-    class STUPEFY_API vector2
-    {
+	class STUPEFY_API vector2
+	{
 	public:
 		float x, y;
 
@@ -63,5 +63,5 @@ namespace Stupefy
 		float magnitudeSquare();
 
 		void show();
-    };
+	};
 }

@@ -23,34 +23,31 @@
 
 #pragma once
 
-/*==========  CORE DIRECTORY  ==========*/
-#include "core/core_common.h"
-#include "core/defines.h"
-#include "core/typedefs.h"
+/*==========  Core DIRECTORY  ==========*/
+#include "Core/CoreCommon.h"
+#include "Core/Defines.h"
+#include "Core/Typedefs.h"
 
 //MATH DIRECTORY
-#include "core/math/math_functions.h"
-#include "core/math/matrix3.h"
-#include "core/math/quaternions.h"
-#include "core/math/vector2.h"
-#include "core/math/vector3.h"
+#include "Core/Math/MathFunctions.h"
+#include "Core/Math/Matrix3.h"
+#include "Core/Math/Quaternions.h"
+#include "Core/Math/Vector2.h"
+#include "Core/Math/Vector3.h"
 
 /*==========  EDITOR DIRECTORY  ==========*/
 //LOGGER DIRECTORY
-#include "editor/logger/logger.h"
-#include "editor/logger/colorboy.h"
+#include "Editor/Logger/Logger.h"
+#include "Editor/Logger/ColorBoy.h"
 
 /*==========  MAIN DIRECTORY  ==========*/
-#include "main/main_app.h"
-#include "main/entrypoint.h"
+#include "Main/MainApp.h"
+#include "Main/EntryPoint.h"
 
 /*==========  SYSTEMS DIRECTORY  ==========*/
 //RENDERER DIRECTORY
-#include "systems/renderer/indexbuffer.h"
-#include "systems/renderer/renderer.h"
-#include "systems/renderer/shader.h"
-#include "systems/renderer/textures.h"
-#include "systems/renderer/vertexarray.h"
-
-
-#include <QtCore\QDebug>
+#include "Systems/Renderer/IndexBuffer.h"
+#include "Systems/Renderer/Renderer.h"
+#include "Systems/Renderer/Shader.h"
+#include "Systems/Renderer/Textures.h"
+#include "Systems/Renderer/VertexArray.h"

@@ -21,8 +21,8 @@
 /****************************************************************************/
 
 
-#include "editor/logger/logger.h"
-#include "editor/logger/colorboy.h"
+#include "Editor/Logger/Logger.h"
+#include "Editor/Logger/ColorBoy.h"
 
 namespace Stupefy
 {

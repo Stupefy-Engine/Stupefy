@@ -27,7 +27,7 @@
 #include <GLFW/glfw3.h>
 #include <vulkan/vulkan.h>
 */
-#include "core/core_common.h"
+#include "Core/CoreCommon.h"
 
 namespace Renderer
 {

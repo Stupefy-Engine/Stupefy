@@ -21,7 +21,7 @@
 /****************************************************************************/
 
 
-#include "systems/renderer/indexbuffer.h"
+#include "Systems/Renderer/IndexBuffer.h"
 
 namespace Renderer
 {

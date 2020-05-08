@@ -23,8 +23,8 @@
 
 #pragma once
 
-#include "core/math/math_functions.h"
-#include "core/math/vector3.h"
+#include "Core/Math/MathFunctions.h"
+#include "Core/Math/Vector3.h"
 
 namespace Stupefy
 {
@@ -45,7 +45,7 @@ namespace Stupefy
 		const matrix3 operator*(const matrix3& m);
 
 		const vector3 operator*(const vector3& v);
-		
+
 		void operator+=(const matrix3& m);
 		void operator*=(const float s);
 		void operator*=(const matrix3& m);

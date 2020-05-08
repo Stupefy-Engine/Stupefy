@@ -21,7 +21,7 @@
 /****************************************************************************/
 
 
-#include "systems/renderer/shader.h"
+#include "Systems/Renderer/Shader.h"
 
 namespace Renderer
 {

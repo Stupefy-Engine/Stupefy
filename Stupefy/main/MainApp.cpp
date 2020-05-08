@@ -21,11 +21,11 @@
 /****************************************************************************/
 
 
-#include "core/math/vector3.h"
-#include "core/math/vector2.h"
-#include "main_app.h"
+#include "Core/Math/Vector3.h"
+#include "Core/Math/Vector2.h"
+#include "MainApp.h"
 
-#include "systems/renderer/renderer.h"
+#include "Systems/Renderer/Renderer.h"
 
 namespace Stupefy
 {

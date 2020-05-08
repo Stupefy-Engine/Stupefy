@@ -21,7 +21,7 @@
 /****************************************************************************/
 
 
-#include "core/math/vector3.h"
+#include "Core/Math/Vector3.h"
 
 namespace Stupefy
 {

@@ -1,5 +1,5 @@
 /****************************************************************************/
-/*  core_common.h                                                           */
+/*  main.h                                                                  */
 /****************************************************************************/
 /*                          This file is a part of:                         */
 /*                              STUPEFY ENGINE                              */
@@ -23,20 +23,19 @@
 
 #pragma once
 
-/*SYSTEM LIBS*/
-#include <iostream>
-#include <string>
-#include <sstream>
-#include <fstream>
-#include <memory>
-#include <vector>
-#include <algorithm>
-#include <ctime>
-#include <math.h>
-#include <chrono>
-#include <exception>
-#include <stdio.h>
-#include <stdarg.h>
+#include "Core/CoreCommon.h"
+#include "Editor/Logger/Logger.h"
 
-#include "typedefs.h"
-#include "defines.h"
+namespace Stupefy
+{
+	class STUPEFY_API Application
+	{
+	public:
+		Application();
+		virtual ~Application();
+
+		void Run();
+	};
+
+	Application* CreateApplication();
+}

@@ -21,7 +21,7 @@
 /****************************************************************************/
 
 
-#include "core/math/matrix3.h"
+#include "Core/Math/Matrix3.h"
 
 namespace Stupefy
 {

@@ -21,7 +21,7 @@
 /****************************************************************************/
 
 
-#include "systems/renderer/vertexarray.h"
+#include "Systems/Renderer/VertexArray.h"
 
 namespace Renderer
 {
