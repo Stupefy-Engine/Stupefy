@@ -1,0 +1,19 @@
+#VS Code Files And Folders
+builds/
+.vscode
+
+#Visual Studio Files And Folders
+.vs/
+**.sln
+**vcxproj
+**vcxproj.filters
+**.vcxproj.user
+
+bin/
+bin-int/
+Logs/
+
+#CMake Files
+build/
+**.cmake
+CMakeFiles/
