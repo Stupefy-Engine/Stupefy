@@ -1,3 +1,0 @@
-[submodule "Stupefy/thirdparty/vulkan"]
-	path = Stupefy/thirdparty/vulkan
-	url = https://github.com/Stupefy-Engine/Vulkan-SDK
