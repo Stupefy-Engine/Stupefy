@@ -1,5 +1,5 @@
 /****************************************************************************/
-/*  vertexarray.h                                                           */
+/*  OpenGLContext.h                                                         */
 /****************************************************************************/
 /*                          This file is a part of:                         */
 /*                              STUPEFY ENGINE                              */
@@ -25,10 +25,8 @@
 
 #include "Core/CoreCommon.h"
 
-namespace Renderer
+class STUPEFY_API OpenGLContext
 {
-	class STUPEFY_API VertexArray
-	{
 
-	};
-}
+};
+

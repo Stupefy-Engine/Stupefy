@@ -25,8 +25,6 @@
 #include "Core/Math/Vector2.h"
 #include "MainApp.h"
 
-#include "Systems/Renderer/Renderer.h"
-
 namespace Stupefy
 {
 

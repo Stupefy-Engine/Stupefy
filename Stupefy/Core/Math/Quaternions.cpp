@@ -25,6 +25,6 @@
 
 namespace Stupefy
 {
-	quaternion::quaternion(){}
-	quaternion::~quaternion(){}
+	Quaternion::Quaternion() {}
+	Quaternion::~Quaternion() {}
 }

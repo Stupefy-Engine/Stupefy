@@ -1,5 +1,5 @@
 /****************************************************************************/
-/*  indexbuffer.h                                                           */
+/*  OpenGLShader.h                                                          */
 /****************************************************************************/
 /*                          This file is a part of:                         */
 /*                              STUPEFY ENGINE                              */
@@ -25,11 +25,8 @@
 
 #include "Core/CoreCommon.h"
 
-namespace Renderer
+class STUPEFY_API OpenGLShader
 {
-	class STUPEFY_API IndexBuffer
-	{
-		IndexBuffer();
-		~IndexBuffer();
-	};
-}
+
+};
+

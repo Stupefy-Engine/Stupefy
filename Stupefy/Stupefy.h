@@ -46,8 +46,8 @@
 
 /*==========  SYSTEMS DIRECTORY  ==========*/
 //RENDERER DIRECTORY
-#include "Systems/Renderer/IndexBuffer.h"
-#include "Systems/Renderer/Renderer.h"
+//#include "Systems/Renderer/IndexBuffer.h"
+//#include "Systems/Renderer/Renderer.h"
 #include "Systems/Renderer/Shader.h"
-#include "Systems/Renderer/Textures.h"
-#include "Systems/Renderer/VertexArray.h"
+//#include "Systems/Renderer/Textures.h"
+//#include "Systems/Renderer/VertexArray.h"

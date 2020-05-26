@@ -1,5 +1,5 @@
 /****************************************************************************/
-/*  shader.cpp                                                              */
+/*  Shader.cpp                                                              */
 /****************************************************************************/
 /*                          This file is a part of:                         */
 /*                              STUPEFY ENGINE                              */
@@ -23,7 +23,3 @@
 
 #include "Systems/Renderer/Shader.h"
 
-namespace Renderer
-{
-	
-}

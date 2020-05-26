@@ -1,5 +1,5 @@
 /****************************************************************************/
-/*  renderer.cpp                                                            */
+/*  Renderer.cpp                                                            */
 /****************************************************************************/
 /*                          This file is a part of:                         */
 /*                              STUPEFY ENGINE                              */
@@ -19,11 +19,3 @@
 /*  See the License for the specific language governing permissions and     */
 /*  limitations under the License.                                          */
 /****************************************************************************/
-
-
-#include "Systems/Renderer/Renderer.h"
-
-namespace Renderer
-{
-	
-}

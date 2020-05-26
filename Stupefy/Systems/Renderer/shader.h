@@ -1,5 +1,5 @@
 /****************************************************************************/
-/*  shader.h                                                                */
+/*  Shader.h                                                                */
 /****************************************************************************/
 /*                          This file is a part of:                         */
 /*                              STUPEFY ENGINE                              */
@@ -25,10 +25,10 @@
 
 #include "Core/CoreCommon.h"
 
-namespace Renderer
+class STUPEFY_API Shader
 {
-	class STUPEFY_API Shader
-	{
+public:
 
-	};
-}
+private:
+
+};

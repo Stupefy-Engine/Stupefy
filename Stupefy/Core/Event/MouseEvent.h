@@ -1,5 +1,5 @@
 /****************************************************************************/
-/*  indexbuffer.cpp                                                         */
+/*  MouseEvent.h                                                            */
 /****************************************************************************/
 /*                          This file is a part of:                         */
 /*                              STUPEFY ENGINE                              */
@@ -21,17 +21,6 @@
 /****************************************************************************/
 
 
-#include "Systems/Renderer/IndexBuffer.h"
+#pragma once
 
-namespace Renderer
-{
-	IndexBuffer::IndexBuffer()
-	{
-
-	}
-
-	IndexBuffer::~IndexBuffer()
-	{
-
-	}
-}
+#include "Core/CoreCommon.h"

@@ -1,5 +1,5 @@
 /****************************************************************************/
-/*  textures.h                                                              */
+/*  OpenGLShader.cpp                                                        */
 /****************************************************************************/
 /*                          This file is a part of:                         */
 /*                              STUPEFY ENGINE                              */
@@ -21,14 +21,4 @@
 /****************************************************************************/
 
 
-#pragma once
-
-#include "Core/CoreCommon.h"
-
-namespace Renderer
-{
-	class STUPEFY_API Textures
-	{
-
-	};
-}
+#include "OpenGLShader.h"

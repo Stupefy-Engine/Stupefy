@@ -1,5 +1,5 @@
 /****************************************************************************/
-/*  vertexarray.cpp                                                         */
+/*  KeyEvent.h                                                              */
 /****************************************************************************/
 /*                          This file is a part of:                         */
 /*                              STUPEFY ENGINE                              */
@@ -21,9 +21,6 @@
 /****************************************************************************/
 
 
-#include "Systems/Renderer/VertexArray.h"
+#pragma once
 
-namespace Renderer
-{
-	
-}
+#include "Core/CoreCommon.h"

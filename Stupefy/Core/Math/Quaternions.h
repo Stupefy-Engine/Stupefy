@@ -30,10 +30,10 @@
 
 namespace Stupefy
 {
-	class STUPEFY_API quaternion
+	class STUPEFY_API Quaternion
 	{
 	public:
-		quaternion();
-		~quaternion();
+		Quaternion();
+		~Quaternion();
 	};
 }

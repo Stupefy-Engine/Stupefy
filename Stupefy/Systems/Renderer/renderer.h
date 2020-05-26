@@ -1,5 +1,5 @@
 /****************************************************************************/
-/*  renderer.h                                                              */
+/*  Renderer.h                                                              */
 /****************************************************************************/
 /*                          This file is a part of:                         */
 /*                              STUPEFY ENGINE                              */
@@ -23,16 +23,9 @@
 
 #pragma once
 
-/*#include <glad/glad.h>
-#include <GLFW/glfw3.h>
-#include <vulkan/vulkan.h>
-*/
 #include "Core/CoreCommon.h"
 
-namespace Renderer
+class STUPEFY_API Renderer
 {
-	class STUPEFY_API render
-	{
 
-	};
-}
+};
