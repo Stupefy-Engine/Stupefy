@@ -4,3 +4,6 @@
 [submodule "Stupefy/Thirdparty/glm"]
 	path = Stupefy/Thirdparty/glm
 	url = https://github.com/g-truc/glm
+[submodule "Stupefy/Thirdparty/imgui"]
+	path = Stupefy/Thirdparty/imgui
+	url = https://github.com/Stupefy-Engine/imgui

@@ -21,12 +21,14 @@ os.mkdir("Stupefy/../Logs")
 IncludeDir = {}
 IncludeDir["GLFW"] = "Stupefy/Thirdparty/GLFW/include"
 IncludeDir["Glad"] = "Stupefy/Thirdparty/Glad/include"
+IncludeDir["ImGui"] = "Stupefy/Thirdparty/imgui"
 IncludeDir["glm"] = "Stupefy/Thirdparty/glm"
 IncludeDir["vulkan"] = "Stupefy/Thirdparty/vulkan/include"
 
 group "Dependencies"
     include "Stupefy/Thirdparty/GLFW"
     include "Stupefy/Thirdparty/Glad"
+    include "Stupefy/Thirdparty/imgui"
     include "Stupefy/Thirdparty/vulkan"
 
     group ""
@@ -46,6 +48,7 @@ project "Stupefy"
         "%{prj.name}/**.h",
         "%{prj.name}/Core/**.cpp",
         "%{prj.name}/Editor/**.cpp",
+        "%{prj.name}/ImGui/**.cpp",
         "%{prj.name}/Main/**.cpp",
         "%{prj.name}/Platform/**.cpp",
         "%{prj.name}/Systems/**.cpp",
@@ -64,6 +67,7 @@ project "Stupefy"
         "%{prj.name}",
         "%{IncludeDir.GLFW}",
         "%{IncludeDir.Glad}",
+        "%{IncludeDir.ImGui}",
         "%{IncludeDir.glm}",
         "%{IncludeDir.vulkan}"
     }
@@ -72,6 +76,7 @@ project "Stupefy"
     {
         "GLFW",
         "Glad",
+        "ImGui",
         "opengl32.lib",
         "Stupefy/Thirdparty/vulkan/Lib/vulkan-1.lib"
     }
