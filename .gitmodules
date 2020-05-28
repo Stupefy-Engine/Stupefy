@@ -1,3 +1,6 @@
 [submodule "Stupefy/Thirdparty/GLFW"]
 	path = Stupefy/Thirdparty/GLFW
 	url = https://github.com/Stupefy-Engine/glfw
+[submodule "Stupefy/Thirdparty/glm"]
+	path = Stupefy/Thirdparty/glm
+	url = https://github.com/g-truc/glm

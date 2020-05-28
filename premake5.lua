@@ -21,6 +21,7 @@ os.mkdir("Stupefy/../Logs")
 IncludeDir = {}
 IncludeDir["GLFW"] = "Stupefy/Thirdparty/GLFW/include"
 IncludeDir["Glad"] = "Stupefy/Thirdparty/Glad/include"
+IncludeDir["glm"] = "Stupefy/Thirdparty/glm"
 IncludeDir["vulkan"] = "Stupefy/Thirdparty/vulkan/include"
 
 group "Dependencies"
@@ -43,7 +44,9 @@ project "Stupefy"
    files
     {
         "%{prj.name}/**.h",
-        "%{prj.name}/**.cpp"
+        "%{prj.name}/**.cpp",
+        "%{prj.name}/Thirdparty/glm/glm/**.hpp",
+        "%{prj.name}/Thirdparty/glm/glm/**.inl"
     }
 
     defines
@@ -56,6 +59,7 @@ project "Stupefy"
         "%{prj.name}",
         "%{IncludeDir.GLFW}",
         "%{IncludeDir.Glad}",
+        "%{IncludeDir.glm}",
         "%{IncludeDir.vulkan}"
     }
 
@@ -111,11 +115,12 @@ project "Sandbox"
     
     includedirs
     {
+        "Stupefy",
+        "Stupefy/Thirdparty",
         "%{IncludeDir.GLFW}",
         "%{IncludeDir.Glad}",
-        "%{IncludeDir.vulkan}",
-        "Stupefy/Thirdparty",
-        "Stupefy"
+        "%{IncludeDir.glm}",
+        "%{IncludeDir.vulkan}"
     }
     
     links
