@@ -28,7 +28,7 @@
 
 namespace Stupefy
 {
-	class STUPEFY_API Application
+	class Application
 	{
 	public:
 		Application();

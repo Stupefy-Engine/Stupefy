@@ -27,7 +27,7 @@
 
 namespace Stupefy
 {
-	class STUPEFY_API Logger
+	class Logger
 	{
 	public:
 		static void Trace(const char* message, ...);

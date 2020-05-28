@@ -44,14 +44,19 @@ project "Stupefy"
    files
     {
         "%{prj.name}/**.h",
-        "%{prj.name}/**.cpp",
+        "%{prj.name}/Core/**.cpp",
+        "%{prj.name}/Editor/**.cpp",
+        "%{prj.name}/Main/**.cpp",
+        "%{prj.name}/Platform/**.cpp",
+        "%{prj.name}/Systems/**.cpp",
         "%{prj.name}/Thirdparty/glm/glm/**.hpp",
-        "%{prj.name}/Thirdparty/glm/glm/**.inl"
+        "%{prj.name}/Thirdparty/glm/glm/**.inl",
     }
 
     defines
 	{
-		"_CRT_SECURE_NO_WARNINGS"
+        "_CRT_SECURE_NO_WARNINGS",
+        "GLFW_INCLUDE_NONE"
 	}
 
     includedirs
@@ -76,9 +81,8 @@ project "Stupefy"
 
         defines
         {
-            "SF_PLATFORM_WINDOWS",
-            "SF_BUILD_DLL",
-            "GLFW_INCLUDE_NONE"
+--            "SF_PLATFORM_WINDOWS",
+--            "SF_BUILD_DLL"
         }
         
 	filter "configurations: Debug"
@@ -95,7 +99,6 @@ project "Stupefy"
         defines "SF_DIST"
         runtime "Release"
         optimize "on"
-
 
 project "Sandbox"
     location "Sandbox"
@@ -131,10 +134,10 @@ project "Sandbox"
     filter "system:windows"
         systemversion "latest"
 
-        defines
-        {
-            "SF_PLATFORM_WINDOWS"
-        }
+--        defines
+--        {
+--            "SF_PLATFORM_WINDOWS"
+--        }
     
 	filter "configurations:Debug"
 		defines "SF_DEBUG"
@@ -150,4 +153,5 @@ project "Sandbox"
 	filter "configurations:Dist"
 		defines "SF_DIST"
 		runtime "Release"
-		optimize "on"
+        optimize "on"
+        

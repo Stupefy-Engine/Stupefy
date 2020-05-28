@@ -25,7 +25,7 @@
 
 #include "Core/CoreCommon.h"
 
-class STUPEFY_API Shader
+class Shader
 {
 public:
 

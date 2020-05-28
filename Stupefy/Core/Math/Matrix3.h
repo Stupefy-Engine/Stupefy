@@ -28,7 +28,7 @@
 
 namespace Stupefy
 {
-	class STUPEFY_API Matrix3
+	class Matrix3
 	{
 	public:
 

@@ -28,7 +28,7 @@
 
 namespace Stupefy
 {
-	class STUPEFY_API Vector2
+	class Vector2
 	{
 	public:
 		float x, y;

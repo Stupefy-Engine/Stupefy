@@ -28,3 +28,4 @@ project "Glad"
     filter "configurations:Release"
         runtime "Release"
         symbols "on"
+        
