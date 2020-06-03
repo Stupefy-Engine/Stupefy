@@ -1,5 +1,5 @@
 /****************************************************************************/
-/*  OpenGLContext.h                                                         */
+/*  Layer.h                                                                 */
 /****************************************************************************/
 /*                          This file is a part of:                         */
 /*                              STUPEFY ENGINE                              */
@@ -24,21 +24,25 @@
 #pragma once
 
 #include "Core/CoreCommon.h"
-#include "Systems/Renderer/Context.h"
-#include <GLFW/glfw3.h>
-#include <glad/glad.h>
+#include "Core/Event/Event.h"
 
 namespace Stupefy
 {
-	class OpenGLContext : public Context
+	class Layer
 	{
 	public:
-		OpenGLContext(GLFWwindow* window);
+		Layer(const std::string& name = "Layer");
+		virtual ~Layer();
 
-		virtual void Init() override;
-		virtual void Swapbuffers() override;
-	private:
-		GLFWwindow* m_Window;
+		virtual void OnAttach() {}
+		virtual void OnDetach() {}
+		virtual void OnUpdate() {}
+		virtual void OnImGuiRender() {}
+		virtual void OnEvent(Event& event) {}
+
+		inline const std::string& GetName() const { return m_DebugName; }
+	protected:
+		std::string m_DebugName;
 	};
-}
 
+}

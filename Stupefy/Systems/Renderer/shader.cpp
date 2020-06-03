@@ -21,5 +21,9 @@
 /****************************************************************************/
 
 
-#include "Systems/Renderer/Shader.h"
+#include "Shader.h"
 
+namespace Stupefy
+{
+
+}

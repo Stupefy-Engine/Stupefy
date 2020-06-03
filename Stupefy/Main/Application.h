@@ -1,5 +1,5 @@
 /****************************************************************************/
-/*  OpenGLContext.h                                                         */
+/*  MainApp.h                                                               */
 /****************************************************************************/
 /*                          This file is a part of:                         */
 /*                              STUPEFY ENGINE                              */
@@ -24,21 +24,21 @@
 #pragma once
 
 #include "Core/CoreCommon.h"
-#include "Systems/Renderer/Context.h"
-#include <GLFW/glfw3.h>
-#include <glad/glad.h>
+#include "Core/Layer/LayerStack.h"
+#include "Core/Event/Event.h"
+#include "Core/Event/ApplicationEvent.h"
+#include "Editor/ImGui/ImGuiLayer.h"
 
 namespace Stupefy
 {
-	class OpenGLContext : public Context
+	class Application
 	{
 	public:
-		OpenGLContext(GLFWwindow* window);
+		Application();
+		virtual ~Application();
 
-		virtual void Init() override;
-		virtual void Swapbuffers() override;
-	private:
-		GLFWwindow* m_Window;
+		void Run();
 	};
-}
 
+	Application* CreateApplication();
+}

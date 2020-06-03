@@ -22,3 +22,29 @@
 
 
 #include "OpenGLContext.h"
+
+namespace Stupefy
+{
+	Stupefy::OpenGLContext::OpenGLContext(GLFWwindow* window)
+		:m_Window(window)
+	{
+		Logger::Fatal("Window is null", window);
+	}
+
+	void Stupefy::OpenGLContext::Init()
+	{
+		glfwMakeContextCurrent(m_Window);
+		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+		Logger::Error("Failed to initialize Glad!", status);
+
+		Logger::Log("OpenGL Info:");
+		Logger::Log("  Vendor: %s", glGetString(GL_VENDOR));
+		Logger::Log("  Renderer: %s", glGetString(GL_RENDERER));
+		Logger::Log("  Version: %s", glGetString(GL_VERSION));
+	}
+
+	void Stupefy::OpenGLContext::Swapbuffers()
+	{
+		glfwSwapBuffers(m_Window);
+	}
+}

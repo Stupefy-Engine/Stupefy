@@ -52,8 +52,8 @@ project "Stupefy"
         "%{prj.name}/Main/**.cpp",
         "%{prj.name}/Platform/**.cpp",
         "%{prj.name}/Systems/**.cpp",
-        "%{prj.name}/Thirdparty/glm/glm/**.hpp",
-        "%{prj.name}/Thirdparty/glm/glm/**.inl",
+--        "%{prj.name}/Thirdparty/glm/glm/**.hpp",
+--        "%{prj.name}/Thirdparty/glm/glm/**.inl",
     }
 
     defines

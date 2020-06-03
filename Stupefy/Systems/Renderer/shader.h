@@ -24,11 +24,16 @@
 #pragma once
 
 #include "Core/CoreCommon.h"
+#include <glad/glad.h>
 
-class Shader
+namespace Stupefy
 {
-public:
+	class Shader
+	{
+	public:
+		virtual ~Shader() = default;
 
-private:
-
-};
+		virtual void Bind() const = 0;
+		virtual void Unbind() const = 0;
+	};
+}

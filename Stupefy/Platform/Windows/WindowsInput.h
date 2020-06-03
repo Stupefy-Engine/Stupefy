@@ -1,5 +1,5 @@
 /****************************************************************************/
-/*  MainApp.h                                                               */
+/*  WindowsInput.h                                                          */
 /****************************************************************************/
 /*                          This file is a part of:                         */
 /*                              STUPEFY ENGINE                              */
@@ -24,18 +24,3 @@
 #pragma once
 
 #include "Core/CoreCommon.h"
-#include "Editor/Logger/Logger.h"
-
-namespace Stupefy
-{
-	class Application
-	{
-	public:
-		Application();
-		virtual ~Application();
-
-		void Run();
-	};
-
-	Application* CreateApplication();
-}

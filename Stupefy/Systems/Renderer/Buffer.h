@@ -1,5 +1,5 @@
 /****************************************************************************/
-/*  OpenGLContext.h                                                         */
+/*  Buffer.h                                                                */
 /****************************************************************************/
 /*                          This file is a part of:                         */
 /*                              STUPEFY ENGINE                              */
@@ -23,22 +23,25 @@
 
 #pragma once
 
-#include "Core/CoreCommon.h"
-#include "Systems/Renderer/Context.h"
-#include <GLFW/glfw3.h>
-#include <glad/glad.h>
-
 namespace Stupefy
 {
-	class OpenGLContext : public Context
+	class VertexBuffer
 	{
 	public:
-		OpenGLContext(GLFWwindow* window);
+		virtual ~VertexBuffer() {}
+		virtual void Bind() = 0;
+		virtual void Unbind() = 0;
 
-		virtual void Init() override;
-		virtual void Swapbuffers() override;
-	private:
-		GLFWwindow* m_Window;
+		static VertexBuffer* Create(float* vertices, unsigned int size);
+	};
+
+	class IndexBuffer
+	{
+	public:
+		virtual ~IndexBuffer() {}
+		virtual void Bind() = 0;
+		virtual void Unbind() = 0;
+
+		static IndexBuffer* Create(unsigned int* indices, unsigned int size);
 	};
 }
-

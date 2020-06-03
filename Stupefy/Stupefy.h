@@ -26,14 +26,12 @@
 /*==========  Core DIRECTORY  ==========*/
 #include "Core/CoreCommon.h"
 #include "Core/Defines.h"
+#include "Core/KeyCodes.h"
+#include "Core/MouseCodes.h"
 #include "Core/Typedefs.h"
 
 //MATH DIRECTORY
-#include "Core/Math/MathFunctions.h"
-#include "Core/Math/Matrix3.h"
-#include "Core/Math/Quaternions.h"
-#include "Core/Math/Vector2.h"
-#include "Core/Math/Vector3.h"
+#include "Core/Math/StupefyMaths.h"
 
 /*==========  EDITOR DIRECTORY  ==========*/
 //LOGGER DIRECTORY
@@ -41,13 +39,20 @@
 #include "Editor/Logger/ColorBoy.h"
 
 /*==========  MAIN DIRECTORY  ==========*/
-#include "Main/MainApp.h"
+#include "Main/Application.h"
 #include "Main/EntryPoint.h"
+
+/*==========  PLATFORM DIRECTORY  ==========*/
+//OPENGL DIRECTORY
+#include "Platform/OpenGL/OpenGLContext.h"
+#include "Platform/OpenGL/OpenGLShader.h"
+
+//VULKAN DIRECTORY
 
 /*==========  SYSTEMS DIRECTORY  ==========*/
 //RENDERER DIRECTORY
-//#include "Systems/Renderer/IndexBuffer.h"
+#include "Systems/Renderer/Buffer.h"
 //#include "Systems/Renderer/Renderer.h"
 #include "Systems/Renderer/Shader.h"
-//#include "Systems/Renderer/Textures.h"
-//#include "Systems/Renderer/VertexArray.h"
+#include "Systems/Renderer/Texture.h"
+#include "Systems/Renderer/VertexArray.h"

@@ -1,5 +1,5 @@
 /****************************************************************************/
-/*  OpenGLContext.h                                                         */
+/*  ApplicationEvent.h                                                      */
 /****************************************************************************/
 /*                          This file is a part of:                         */
 /*                              STUPEFY ENGINE                              */
@@ -24,21 +24,65 @@
 #pragma once
 
 #include "Core/CoreCommon.h"
-#include "Systems/Renderer/Context.h"
-#include <GLFW/glfw3.h>
-#include <glad/glad.h>
+#include "Event.h"
 
 namespace Stupefy
 {
-	class OpenGLContext : public Context
+	class WindowResizeEvent : public Event
 	{
 	public:
-		OpenGLContext(GLFWwindow* window);
+		WindowResizeEvent(unsigned int width, unsigned int height)
+			:m_Width(width), m_Height(height) {}
 
-		virtual void Init() override;
-		virtual void Swapbuffers() override;
+		inline unsigned int	GetWidth() const { return m_Width; }
+		inline unsigned int GetHeight() const { return m_Height; }
+
+		std::string ToString() const override
+		{
+			std::stringstream ss;
+			ss << "WindowResizeEvent: " << m_Width << ", " << m_Height;
+			return ss.str();
+		}
+
+		EVENT_CLASS_TYPE(WindowResize)
+			EVENT_CLASS_CATEGORY(EventCategoryApplication)
 	private:
-		GLFWwindow* m_Window;
+		unsigned int m_Width, m_Height;
+	};
+
+	class WindowCloseEvent : public Event
+	{
+	public:
+		WindowCloseEvent() {}
+
+		EVENT_CLASS_TYPE(WindowClose)
+			EVENT_CLASS_CATEGORY(EventCategoryApplication)
+	};
+
+	class ApptickEvent : public Event
+	{
+	public:
+		ApptickEvent() {}
+
+		EVENT_CLASS_TYPE(AppTick)
+			EVENT_CLASS_CATEGORY(EventCategoryApplication)
+	};
+
+	class AppUpdateEvent : public Event
+	{
+	public:
+		AppUpdateEvent() {}
+
+		EVENT_CLASS_TYPE(AppUpdate)
+			EVENT_CLASS_CATEGORY(EventCategoryApplication)
+	};
+
+	class AppRenderEvent : public Event
+	{
+	public:
+		AppRenderEvent() {}
+
+		EVENT_CLASS_TYPE(AppRender)
+			EVENT_CLASS_CATEGORY(EventCategoryApplication)
 	};
 }
-

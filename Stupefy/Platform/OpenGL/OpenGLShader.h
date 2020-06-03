@@ -24,9 +24,27 @@
 #pragma once
 
 #include "Core/CoreCommon.h"
+#include "Systems/Renderer/Shader.h"
 
-class OpenGLShader
+namespace Stupefy
 {
+	class OpenGLShader : public Shader
+	{
+	public:
+		OpenGLShader(const std::string& filepath);
+		OpenGLShader(const std::string& name, const std::string& vertexSource, const std::string& fragmentSource);
+		virtual ~OpenGLShader();
 
-};
+		virtual void Bind() const override;
+		virtual void Unbind() const override;
 
+	private:
+		std::string FileReader(const std::string& filepath);
+		std::string ProcessShader(const std::string& source);
+		void CompileShader(const std::string& shaderSource);
+
+	private:
+		unsigned int m_RenderID;
+		std::string m_Name;
+	};
+}

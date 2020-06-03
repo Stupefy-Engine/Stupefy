@@ -1,5 +1,5 @@
 /****************************************************************************/
-/*  MainApp.cpp                                                             */
+/*  Window.h                                                                */
 /****************************************************************************/
 /*                          This file is a part of:                         */
 /*                              STUPEFY ENGINE                              */
@@ -21,26 +21,4 @@
 /****************************************************************************/
 
 
-#include "Core/Math/Vector3.h"
-#include "Core/Math/Vector2.h"
-#include "MainApp.h"
-
-namespace Stupefy
-{
-
-	Application::Application()
-	{
-
-	}
-
-	Application::~Application()
-	{
-
-	}
-
-	void Application::Run()
-	{
-		while (true);
-	}
-
-}
+#pragma once

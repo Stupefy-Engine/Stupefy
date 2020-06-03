@@ -28,15 +28,18 @@
 #include <string>
 #include <sstream>
 #include <fstream>
-#include <memory>
+//#include <memory>
 #include <vector>
 #include <algorithm>
 #include <ctime>
 #include <math.h>
 #include <chrono>
-#include <exception>
-#include <stdio.h>
-#include <stdarg.h>
+//#include <exception>
+//#include <stdio.h>
+//#include <stdarg.h>
+#include <unordered_map>
 
 #include "Typedefs.h"
 #include "Defines.h"
+#include "Editor/Logger/Logger.h"
+#include "Editor/Logger/ColorBoy.h"

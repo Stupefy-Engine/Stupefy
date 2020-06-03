@@ -1,5 +1,5 @@
 /****************************************************************************/
-/*  OpenGLContext.h                                                         */
+/*  LayerStack.h                                                            */
 /****************************************************************************/
 /*                          This file is a part of:                         */
 /*                              STUPEFY ENGINE                              */
@@ -24,21 +24,26 @@
 #pragma once
 
 #include "Core/CoreCommon.h"
-#include "Systems/Renderer/Context.h"
-#include <GLFW/glfw3.h>
-#include <glad/glad.h>
+#include "Layer.h"
 
 namespace Stupefy
 {
-	class OpenGLContext : public Context
+	class LayerStack
 	{
 	public:
-		OpenGLContext(GLFWwindow* window);
+		LayerStack();
+		~LayerStack();
 
-		virtual void Init() override;
-		virtual void Swapbuffers() override;
+		void PushLayer(Layer* layer);
+		void PushOverlay(Layer* overlay);
+		void PopLayer(Layer* layer);
+		void PopOverlay(Layer* overlay);
+
+		std::vector<Layer*>::iterator begin() { return m_Layers.begin(); }
+		std::vector<Layer*>::iterator end() { return m_Layers.end(); }
 	private:
-		GLFWwindow* m_Window;
+		std::vector<Layer*> m_Layers;
+		unsigned int m_LayerInsertIndex = 0;
 	};
 }
 

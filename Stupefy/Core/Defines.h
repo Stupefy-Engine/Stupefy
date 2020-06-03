@@ -73,6 +73,8 @@
 #endif
 
 
+
+//ERROR SYSTEM
 #define ASSERTIONS_ENABLED
 #ifdef ASSERTIONS_ENABLED
 #include <iostream>
@@ -141,3 +143,7 @@ FORCEINGINLINE void reportAssertionFailure(const char* expression, const char* m
 #define ASSERT_DEBUG(expr)
 
 #endif
+
+
+//CORE
+#define BIT(x) (1 << x)

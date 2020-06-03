@@ -1,5 +1,5 @@
 /****************************************************************************/
-/*  OpenGLContext.h                                                         */
+/*  LayerStack.cpp                                                          */
 /****************************************************************************/
 /*                          This file is a part of:                         */
 /*                              STUPEFY ENGINE                              */
@@ -21,24 +21,45 @@
 /****************************************************************************/
 
 
-#pragma once
-
-#include "Core/CoreCommon.h"
-#include "Systems/Renderer/Context.h"
-#include <GLFW/glfw3.h>
-#include <glad/glad.h>
+#include "LayerStack.h"
 
 namespace Stupefy
 {
-	class OpenGLContext : public Context
+	LayerStack::LayerStack()
 	{
-	public:
-		OpenGLContext(GLFWwindow* window);
+	}
 
-		virtual void Init() override;
-		virtual void Swapbuffers() override;
-	private:
-		GLFWwindow* m_Window;
-	};
+	LayerStack::~LayerStack()
+	{
+		for (Layer* layer : m_Layers)
+			delete layer;
+	}
+
+	void LayerStack::PushLayer(Layer* layer)
+	{
+		m_Layers.emplace(m_Layers.begin() + m_LayerInsertIndex, layer);
+		m_LayerInsertIndex++;
+	}
+
+	void LayerStack::PushOverlay(Layer* overlay)
+	{
+		m_Layers.emplace_back(overlay);
+	}
+
+	void LayerStack::PopLayer(Layer* layer)
+	{
+		auto it = std::find(m_Layers.begin(), m_Layers.end(), layer);
+		if (it != m_Layers.end())
+		{
+			m_Layers.erase(it);
+			m_LayerInsertIndex--;
+		}
+	}
+
+	void LayerStack::PopOverlay(Layer* overlay)
+	{
+		auto it = std::find(m_Layers.begin(), m_Layers.end(), overlay);
+		if (it != m_Layers.end())
+			m_Layers.erase(it);
+	}
 }
-

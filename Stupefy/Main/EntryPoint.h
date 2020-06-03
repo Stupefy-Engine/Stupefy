@@ -24,7 +24,6 @@
 #pragma once
 
 #include "Core/CoreCommon.h"
-#include "Editor/Logger/Logger.h"
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
@@ -60,9 +59,9 @@ int main()
 	}
 
 	Stupefy::Logger::Log("OpenGL Info:");
-	Stupefy::Logger::Log(" Vendor: %s", glGetString(GL_VENDOR));
-	Stupefy::Logger::Log(" Renderer: %s", glGetString(GL_RENDERER));
-	Stupefy::Logger::Log(" Version: %s", glGetString(GL_VERSION));
+	Stupefy::Logger::Log("  Vendor: %s", glGetString(GL_VENDOR));
+	Stupefy::Logger::Log("  Renderer: %s", glGetString(GL_RENDERER));
+	Stupefy::Logger::Log("  Version: %s", glGetString(GL_VERSION));
 
 	while (!glfwWindowShouldClose(window))
 	{
@@ -77,11 +76,11 @@ int main()
 
 void display(GLFWwindow* window)
 {
-	glClearColor(1.0, 0.5, 0.25, 1.0);
+	glClearColor(0.1, 0.1, 0.1, 1.0);
 	glClear(GL_COLOR_BUFFER_BIT);
 }
-
 /*
+
 int main(int argc, char* argv)
 {
 	Stupefy::Logger::Log("Initializing Stupefy Engine: v%d.0", 1);

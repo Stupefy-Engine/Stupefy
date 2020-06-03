@@ -25,7 +25,10 @@
 
 #include "Core/CoreCommon.h"
 
-class Renderer
+namespace Stupefy
 {
+	class Renderer
+	{
 
-};
+	};
+}
