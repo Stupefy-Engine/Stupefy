@@ -1,5 +1,5 @@
 workspace "Stupefy"
-    architecture "x86_64"
+    architecture "x64"
     startproject "Sandbox"
 
     configurations
@@ -48,7 +48,6 @@ project "Stupefy"
         "%{prj.name}/**.h",
         "%{prj.name}/Core/**.cpp",
         "%{prj.name}/Editor/**.cpp",
-        "%{prj.name}/ImGui/**.cpp",
         "%{prj.name}/Main/**.cpp",
         "%{prj.name}/Platform/**.cpp",
         "%{prj.name}/Systems/**.cpp",
@@ -86,8 +85,8 @@ project "Stupefy"
 
         defines
         {
---            "SF_PLATFORM_WINDOWS",
---            "SF_BUILD_DLL"
+            "SF_PLATFORM_WINDOWS",
+            "SF_BUILD_DLL"
         }
         
 	filter "configurations: Debug"
@@ -127,6 +126,7 @@ project "Sandbox"
         "Stupefy/Thirdparty",
         "%{IncludeDir.GLFW}",
         "%{IncludeDir.Glad}",
+        "%{IncludeDir.ImGui}",
         "%{IncludeDir.glm}",
         "%{IncludeDir.vulkan}"
     }
@@ -139,24 +139,23 @@ project "Sandbox"
     filter "system:windows"
         systemversion "latest"
 
---        defines
---        {
---            "SF_PLATFORM_WINDOWS"
---        }
+        defines
+        {
+            "SF_PLATFORM_WINDOWS"
+        }
     
-	filter "configurations:Debug"
+	filter "configurations: Debug"
 		defines "SF_DEBUG"
-        runtime "Debug"
-        buildoptions "/MT"
+		runtime "Debug"
 		symbols "on"
 
-	filter "configurations:Release"
+	filter "configurations: Release"
 		defines "SF_RELEASE"
 		runtime "Release"
 		optimize "on"
 
-	filter "configurations:Dist"
+	filter "configurations: Dist"
 		defines "SF_DIST"
 		runtime "Release"
-        optimize "on"
+		optimize "on"
         

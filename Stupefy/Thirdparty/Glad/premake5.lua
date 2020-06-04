@@ -3,8 +3,8 @@ project "Glad"
     language "C"
     staticruntime "on"
 
-    targetdir("bin/"..outputdir.."/%{prj.name}")
-    objdir("bin-int/"..outputdir.."/%{prj.name}")
+    targetdir ("bin/" .. outputdir .. "/%{prj.name}")
+    objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
     files
     {
@@ -27,5 +27,5 @@ project "Glad"
     
     filter "configurations:Release"
         runtime "Release"
-        symbols "on"
+        optimize "on"
         

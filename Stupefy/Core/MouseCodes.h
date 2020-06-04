@@ -62,3 +62,16 @@ namespace Stupefy
 #define SF_MOUSE_BUTTON_RIGHT  ::Stupefy::Mouse::ButtonRight
 #define SF_MOUSE_BUTTON_MIDDLE ::Stupefy::Mouse::ButtonMiddle
 */
+
+#define SF_MOUSE_BUTTON_1         0
+#define SF_MOUSE_BUTTON_2         1
+#define SF_MOUSE_BUTTON_3         2
+#define SF_MOUSE_BUTTON_4         3
+#define SF_MOUSE_BUTTON_5         4
+#define SF_MOUSE_BUTTON_6         5
+#define SF_MOUSE_BUTTON_7         6
+#define SF_MOUSE_BUTTON_8         7
+#define SF_MOUSE_BUTTON_LAST      SF_MOUSE_BUTTON_8
+#define SF_MOUSE_BUTTON_LEFT      SF_MOUSE_BUTTON_1
+#define SF_MOUSE_BUTTON_RIGHT     SF_MOUSE_BUTTON_2
+#define SF_MOUSE_BUTTON_MIDDLE    SF_MOUSE_BUTTON_3

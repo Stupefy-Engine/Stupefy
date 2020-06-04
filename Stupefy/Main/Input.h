@@ -1,5 +1,5 @@
 /****************************************************************************/
-/*  ImGuiLayer.h                                                            */
+/*  Input.h                                                                 */
 /****************************************************************************/
 /*                          This file is a part of:                         */
 /*                              STUPEFY ENGINE                              */
@@ -23,27 +23,28 @@
 
 #pragma once
 
-#include "Core/Layer/Layer.h"
-
-#include "Core/Event/ApplicationEvent.h"
-#include "Core/Event/KeyEvent.h"
-#include "Core/Event/MouseEvent.h"
+#include "Core/CoreCommon.h"
 
 namespace Stupefy
 {
-	class ImGuiLayer : public Layer
+	class Input
 	{
 	public:
-		ImGuiLayer();
-		~ImGuiLayer();
+		inline static bool IsKeyPressed(int keycode) { return s_Instance->IsKeyPressedImpl(keycode); }
 
-		virtual void OnAttach() override;
-		virtual void OnDetach() override;
-		virtual void OnImGuiRender() override;
-		void Begin();
-		void End();
+		inline static bool IsMouseButtonPressed(int button) { return s_Instance->IsMouseButtonPressedImpl(button); }
+		inline static std::pair<float, float>GetMousePosition() { return s_Instance->GetMousePositionImpl(); }
+		inline static float GetMouseX() { return s_Instance->GetMouseXImpl(); }
+		inline static float GetMouseY() { return s_Instance->GetMouseYImpl(); }
 
+	protected:
+		virtual bool IsKeyPressedImpl(int keycode) = 0;
+
+		virtual bool IsMouseButtonPressedImpl(int button) = 0;
+		virtual std::pair<float, float>GetMousePositionImpl() = 0;
+		virtual float GetMouseXImpl() = 0;
+		virtual float GetMouseYImpl() = 0;
 	private:
-		float m_Time = 0.0f;
+		static Input* s_Instance;
 	};
 }

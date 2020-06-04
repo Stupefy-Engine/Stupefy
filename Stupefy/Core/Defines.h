@@ -133,7 +133,7 @@ FORCEINGINLINE void reportAssertionFailure(const char* expression, const char* m
 	ColorBoy::SetBackgroundColor(ColorBoy::WHITE_BKG);
 	ColorBoy::SetTextColorBright(ColorBoy::BLUE_TXT);
 	ColorBoy::SetStyle(ColorBoy::BOLD);
-	std::cerr << "Assertion Failure: " << expression << " message: ' " << message << " ' in file: " << file << " at line: " << line << "\n";
+	/*std::cerr << "Assertion Failure: " << expression << " message: ' " << message << " ' in file: " << file << " at line: " << line << "\n";*/
 	ColorBoy::restoreConsole();
 }
 
@@ -147,3 +147,5 @@ FORCEINGINLINE void reportAssertionFailure(const char* expression, const char* m
 
 //CORE
 #define BIT(x) (1 << x)
+
+#define SF_BIND_EVENT_FN(fn) std::bind(&fn, this,std::placeholders::_1)
