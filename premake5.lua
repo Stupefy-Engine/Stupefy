@@ -159,3 +159,58 @@ project "Sandbox"
 		runtime "Release"
 		optimize "on"
         
+project "Stupefy-Editor"
+    location "Stupefy-Editor"
+    kind "ConsoleApp"
+    language "C++"
+    cppdialect "C++17"
+    staticruntime "on"
+    
+    targetdir ("bin/" .. outputdir .. "/%{prj.name}")
+    objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+    
+    files
+    {
+        "%{prj.name}/**.h",
+        "%{prj.name}/**.cpp"
+    }
+    
+    includedirs
+    {
+        "Stupefy",
+        "Stupefy/Thirdparty",
+        "%{IncludeDir.GLFW}",
+        "%{IncludeDir.Glad}",
+        "%{IncludeDir.ImGui}",
+        "%{IncludeDir.glm}",
+        "%{IncludeDir.vulkan}"
+    }
+    
+    links
+    {
+        "Stupefy"
+    }
+    
+    filter "system:windows"
+        systemversion "latest"
+
+        defines
+        {
+            "SF_PLATFORM_WINDOWS"
+        }
+    
+	filter "configurations: Debug"
+		defines "SF_DEBUG"
+		runtime "Debug"
+		symbols "on"
+
+	filter "configurations: Release"
+		defines "SF_RELEASE"
+		runtime "Release"
+		optimize "on"
+
+	filter "configurations: Dist"
+		defines "SF_DIST"
+		runtime "Release"
+		optimize "on"
+        

@@ -1,5 +1,5 @@
 /****************************************************************************/
-/*  SandboxApp.cpp                                                          */
+/*  Sandbox2D.cpp                                                           */
 /****************************************************************************/
 /*                          This file is a part of:                         */
 /*                              STUPEFY ENGINE                              */
@@ -21,24 +21,8 @@
 /****************************************************************************/
 
 
-#include <Stupefy.h>
+#include "Sandbox2D.h"
+#include <imgui/imgui.h>
 
-class Sandbox : public Stupefy::Application
-{
-public:
-	Sandbox()
-	{
-
-	}
-
-	~Sandbox()
-	{
-
-	}
-};
-
-Stupefy::Application* Stupefy::CreateApplication()
-{
-	return new Sandbox();
-}
-
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>

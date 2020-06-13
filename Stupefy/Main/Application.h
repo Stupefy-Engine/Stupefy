@@ -41,6 +41,7 @@ namespace Stupefy
 		void Run();
 
 		void OnEvent(Event& e);
+		void Close();
 
 		void PushLayer(Layer* layer);
 		void PushOverlay(Layer* layer);

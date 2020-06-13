@@ -25,7 +25,7 @@
 #include "ImGuiLayer.h"
 
 #include "imgui.h"
-#define IMGUI_IMPL_API
+//#define IMGUI_IMPL_API
 #include "examples/imgui_impl_glfw.h"
 #include "examples/imgui_impl_opengl3.h"
 
@@ -69,6 +69,7 @@ namespace Stupefy
 
 		Application& app = Application::Get();
 		GLFWwindow* window = static_cast<GLFWwindow*>(app.GetWindow().GetNativeWindow());
+
 		ImGui_ImplGlfw_InitForOpenGL(window, true);
 		ImGui_ImplOpenGL3_Init("#version 410");
 	}

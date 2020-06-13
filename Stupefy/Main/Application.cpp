@@ -35,7 +35,7 @@ namespace Stupefy
 	{
 		if (s_Instance)
 		{
-			Logger::Fatal("Application already exists!", !s_Instance);
+			Logger::Fatal("Application already exists! %d", !s_Instance);
 		}
 		s_Instance = this;
 
@@ -68,7 +68,7 @@ namespace Stupefy
 		EventDispatcher dispatcher(e);
 		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClose));
 
-		Logger::Trace("Tracing ", e);
+		Logger::Trace("Tracing %s", e);
 
 		for (auto it = m_LayerStack.end(); it != m_LayerStack.begin();)
 		{
@@ -76,6 +76,11 @@ namespace Stupefy
 			if (e.Handled)
 				break;
 		}
+	}
+
+	void Application::Close()
+	{
+		m_Running = false;
 	}
 
 	void Application::Run()
